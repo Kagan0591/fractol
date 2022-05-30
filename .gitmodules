@@ -1,5 +1,5 @@
-[submodule "minilibx-linux"]
-	path = minilibx-linux
+[submodule "mlx_linux"]
+	path = mlx_linux
 	url = https://github.com/42Paris/minilibx-linux.git
 [submodule "42Qc_libft"]
 	path = 42Qc_libft
