@@ -6,13 +6,15 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/05/25 10:57:59 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/05/30 09:48:16 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
+// #include "fractol.h"
 
 int	main(int argc, char **argv)
 {
+	(void) argc;
+	(void) argv;
 	return (0);
 }

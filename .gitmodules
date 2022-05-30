@@ -1,3 +1,6 @@
 [submodule "minilibx-linux"]
 	path = minilibx-linux
 	url = https://github.com/42Paris/minilibx-linux.git
+[submodule "42Qc_libft"]
+	path = 42Qc_libft
+	url = https://github.com/Kagan0591/42Qc_libft.git
