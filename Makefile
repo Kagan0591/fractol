@@ -4,11 +4,11 @@ ifeq (${OS},Linux)
 	NAME = Makefile_linux.mk
 endif
 ifeq (${OS},Darwin)
-	NAME = Makefile_mac.mk
+	NAME = Makefile_mac
 endif
 
 all: ${NAME}
-	make -f ${NAME} all
+	${MAKE} -f ${NAME} all
 
 ${NAME}:
 

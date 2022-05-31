@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
+make -f Makefile_linux.mk all
+make: Leaving directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
+ 
