@@ -1,4 +1,382 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make -f Makefile_linux.mk all
+ 
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+ 
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Tue May 31 21:44:12 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile_linux.mk', line 60)
+RM = rm -rf
+# makefile (from 'Makefile_linux.mk', line 35)
+B_SRCS_DIR = bonus_srcs/
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /home/thomas/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/node
+# makefile (from 'Makefile_linux.mk', line 55)
+CFLAGS = -Wall -Werror -Wextra -g
+# makefile (from 'Makefile_linux.mk', line 18)
+BLUE = \033[34m
+# makefile (from 'Makefile_linux.mk', line 1)
+MAKEFILE_LIST :=  Makefile_linux.mk
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile_linux.mk', line 48)
+OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
+# environment
+P9K_SSH = 0
+# environment
+VSCODE_CWD = /mnt/c/Program Files/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/thomas/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/bin/remote-cli:/home/thomas/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/mingw64/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files (x86)/Calibre2/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/thomas/AppData/Local/Microsoft/WindowsApps
+# makefile (from 'Makefile_linux.mk', line 9)
+BOLD = \033[1m
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
+# makefile (from 'Makefile_linux.mk', line 8)
+END = \033[0m
+# makefile (from 'Makefile_linux.mk', line 47)
+B_SRCS = $(addprefix $(B_SRCS_DIR), $(B_SRCS_FILES))
+# makefile (from 'Makefile_linux.mk', line 49)
+B_OBJS = $(addprefix $(B_OBJS_DIR), $(B_OBJS_FILES))
+# makefile (from 'Makefile_linux.mk', line 12)
+SELECTED = \033[7m
+# makefile (from 'Makefile_linux.mk', line 43)
+VPATH = $(SRCS_DIR) $(B_SRCS_DIR)
+# makefile (from 'Makefile_linux.mk', line 34)
+SRCS_DIR = srcs/
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-e032bb67-e408-409c-9ad1-ef561f3c39f1.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile_linux.mk', line 40)
+LIBFT_DIR = 42Qc_libft/
+# makefile (from 'Makefile_linux.mk', line 37)
+B_OBJS_DIR = bonus_objs/
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0.0
+# makefile (from 'Makefile_linux.mk', line 11)
+URL = \033[4m
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from 'Makefile_linux.mk', line 25)
+SRCS_FILES = main.c 
+# environment
+PWD = /mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/12165_interop
+# environment
+PULSE_SERVER = /mnt/wslg/PulseServer
+# makefile (from 'Makefile_linux.mk', line 16)
+GREEN = \033[32m
+# makefile (from 'Makefile_linux.mk', line 38)
+INC_DIR = inc/
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/thomas
+# environment
+LOGNAME = thomas
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+ZSH = /home/thomas/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'Makefile_linux.mk', line 41)
+MLX_LINUX_DIR = mlx_linux/
+# environment
+MAKELEVEL := 1
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from 'Makefile_linux.mk', line 46)
+SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILES))
+# environment
+SHLVL = 0
+# makefile (from 'Makefile_linux.mk', line 21)
+WHITE = \033[37m
+# makefile (from 'Makefile_linux.mk', line 56)
+LIBFT = $(MAKE) --silent -C $(LIBFT_DIR)
+# makefile (from 'Makefile_linux.mk', line 54)
+CC = gcc
+# makefile (from 'Makefile_linux.mk', line 19)
+VIOLET = \033[35m
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = thomas
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile_linux.mk', line 23)
+NAME = pipex
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/thomas/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/c/Program Files/Microsoft VS Code
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile (from 'Makefile_linux.mk', line 15)
+RED = \033[31m
+# makefile
+MAKEFLAGS = pqrRw
+# environment
+MFLAGS = -pqrRw
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile_linux.mk', line 14)
+BLACK = \033[30m
+# makefile (from 'Makefile_linux.mk', line 36)
+OBJS_DIR = objs/
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile_linux.mk', line 17)
+YELLOW = \033[33m
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# default
+MAKEFILES := 
+# makefile (from 'Makefile_linux.mk', line 57)
+MLX_CONFIG = $(MAKE) --silent -C ${MLX_LINUX_DIR}
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile_linux.mk', line 30)
+OBJS_FILES = $(SRCS_FILES:.c=.o)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+WAYLAND_DISPLAY = wayland-0
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile_linux.mk', line 10)
+ITALIC = \033[3m
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile_linux.mk', line 39)
+B_INC_DIR = bonus_inc/
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# makefile (from 'Makefile_linux.mk', line 20)
+BEIGE = \033[36m
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu-20.04
+# variable set hash-table stats:
+# Load=107/1024=10%, Rehash=0, Collisions=12/149=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# bonus_srcs: could not be stat'd.
+# srcs (device 64, inode 26458647810810363): 3 files, no impossibilities.
+
+# 3 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+objs/%.o: %.c
+#  recipe to execute (from 'Makefile_linux.mk', line 73):
+	@${CC} ${CFLAGS} -I${LIBFT_DIR} -I${MLX_LINUX_DIR} -I/usr/include -I${INC_DIR} -I. -O3 -o $@ -c $<
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+objs/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: obj pipex
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+#  recipe to execute (from 'Makefile_linux.mk', line 64):
+	${LIBFT}
+	${MLX_CONFIG}
+
+phony: all bonus clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bonus:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile_linux.mk', line 79):
+	echo "Bonus"
+
+fclean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile_linux.mk', line 93):
+	echo "fclean"
+
+obj:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'Makefile_linux.mk', line 82):
+	mkdir -p ${OBJS_DIR}
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: clean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile_linux.mk', line 96):
+	echo "re"
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile_linux.mk', line 88):
+	${LIBFT} clean
+	${MLX_CONFIG} clean
+	echo "clean"
+
+pipex: objs/main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile_linux.mk', line 68):
+	@${CC} ${OBJS} -L${LIBFT_DIR} -l${LIBFT_DIR} -L${MLX_LINUX_DIR} -l${MLX_LINUX_DIR} -I${MLX_LINUX_DIR} -L/usr/lib -lXext -lX11 -lft -lm -lz -o ${NAME}
+	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
+	@sleep 1
+
+# Not a target:
+Makefile_linux.mk:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-31 15:33:12.1298541
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=12/1024=1%, Rehash=0, Collisions=0/42=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# General ('VPATH' variable) search path:
+# srcs:bonus_srcs
+
+# strcache buffers: 1 (0) / strings = 22 / storage = 166 B / avg = 7 B
+# current buf: size = 8162 B / used = 166 B / count = 22 / avg = 7 B
+
+# strcache performance: lookups = 46 / hit rate = 52%
+# hash-table stats:
+ 
+# Load=22/8192=0%, Rehash=0, Collisions=1/46=2%
+# Finished Make data base on Tue May 31 21:44:12 2022
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +384,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 31 09:24:11 2022
+# Make data base, printed on Tue May 31 21:44:12 2022
 
 # Variables
 
@@ -163,7 +541,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
 # variable set hash-table stats:
-# Load=76/1024=7%, Rehash=0, Collisions=4/117=3%
+# Load=76/1024=7%, Rehash=0, Collisions=4/119=3%
 
 # Pattern-specific Variable Values
 
@@ -171,9 +549,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 64, inode 52072870691474338): 19 files, no impossibilities.
+# . (device 64, inode 52072870691474338): 18 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -185,7 +563,7 @@ all: Makefile_linux.mk
 #  Command line target.
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
-#  File does not exist.
+#  Modification time never checked.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -205,9 +583,9 @@ all: Makefile_linux.mk
 # automatic
 # ? := Makefile_linux.mk
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+# Load=8/32=25%, Rehash=0, Collisions=2/14=14%
 #  recipe to execute (from 'Makefile', line 11):
-	make -f ${NAME} all
+	${MAKE} -f ${NAME} all
 
 phony: all bonus clean fclean re
 #  Implicit rule search has not been done.
@@ -223,7 +601,7 @@ phony: all bonus clean fclean re
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-31 08:36:53.3480754
+#  Last modified 2022-05-31 10:07:37.9881739
 #  File has been updated.
 #  Successfully updated.
 
@@ -263,24 +641,25 @@ clean:
 
 Makefile_linux.mk:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-31 09:22:43.4909384
+#  Last modified 2022-05-31 15:33:12.1298541
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/29=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/30=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
+ 
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 258 B / avg = 8 B
-# current buf: size = 8162 B / used = 258 B / count = 29 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 237 B / avg = 8 B
+# current buf: size = 8162 B / used = 237 B / count = 28 / avg = 8 B
 
-# strcache performance: lookups = 49 / hit rate = 40%
+# strcache performance: lookups = 48 / hit rate = 41%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/49=2%
-# Finished Make data base on Tue May 31 09:24:11 2022
+# Load=28/8192=0%, Rehash=0, Collisions=1/48=2%
+# Finished Make data base on Tue May 31 21:44:12 2022
 
  

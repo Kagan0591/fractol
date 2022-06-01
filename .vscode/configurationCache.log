@@ -1,1 +1,1 @@
-{"buildTargets":["Makefile_linux.mk","all","bonus","clean","fclean","phony","re"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["Makefile_linux.mk","all","bonus","clean","fclean","obj","phony","pipex","re"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

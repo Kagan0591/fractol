@@ -1,5 +1,10 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
 make -f Makefile_linux.mk all
+make[1]: Entering directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
+mkdir -p objs/
+make --silent -C 42Qc_libft/
+make --silent -C mlx_linux/
+make[1]: Leaving directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
 make: Leaving directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
  
