@@ -20,7 +20,7 @@ VIOLET		= \033[35m
 BEIGE		= \033[36m
 WHITE		= \033[37m
 
-NAME			= pipex
+NAME			= fractol
 
 SRCS_FILES		= main.c \
 

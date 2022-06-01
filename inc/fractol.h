@@ -10,7 +10,7 @@
 #include <errno.h>
 
 // if ()
-#include "mlx.h"
+#include <mlx.h>
 #include "libft.h"
 
 #endif

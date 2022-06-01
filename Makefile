@@ -4,7 +4,7 @@ ifeq (${OS},Linux)
 	NAME = Makefile_linux.mk
 endif
 ifeq (${OS},Darwin)
-	NAME = Makefile_mac
+	NAME = Makefile_mac.mk
 endif
 
 all: ${NAME}

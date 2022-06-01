@@ -20,7 +20,7 @@ VIOLET		= \033[35m
 BEIGE		= \033[36m
 WHITE		= \033[37m
 
-NAME			= pipex
+NAME			= fractol
 
 SRCS_FILES		= main.c \
 
@@ -38,8 +38,8 @@ B_OBJS_DIR		= bonus_objs/
 INC_DIR			= inc/
 B_INC_DIR		= bonus_inc/
 LIBFT_DIR		= 42Qc_libft/
-MLX_LINUX_DIR	= mlx_linux/
-# MLX_MAC_DIR		= mlx_mac/
+# MLX_LINUX_DIR	= mlx_linux/
+MLX_MAC_DIR		= mlx/
 VPATH			= $(SRCS_DIR) $(B_SRCS_DIR)
 
 ## Assembling sources and objects
@@ -54,23 +54,23 @@ B_OBJS	= $(addprefix $(B_OBJS_DIR), $(B_OBJS_FILES))
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g
 LIBFT		= $(MAKE) --silent -C $(LIBFT_DIR)
-MLX_CONFIG	= $(MAKE) --silent -C ${MLX_LINUX_DIR}
+MLX_CONFIG	= $(MAKE) --silent -C ${MLX_MAC_DIR}
 
 ## Misc var setup
 RM	= rm -rf
 
 ###------------------------------## REGLES ##------------------------------###
 all: obj $(NAME)
-	${LIBFT}
-	${MLX_CONFIG}
 
 ${NAME}: $(OBJS)
-	@${CC} ${OBJS} -L${LIBFT_DIR} -l${LIBFT_DIR} -L${MLX_LINUX_DIR} -l${MLX_LINUX_DIR} -I${MLX_LINUX_DIR} -L/usr/lib -lXext -lX11 -lft -lm -lz -o ${NAME}
+	${LIBFT}
+# ${MLX_CONFIG}
+	@${CC} ${OBJS} -L${LIBFT_DIR} -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME} -lm
 	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
 	@sleep 1
 
 $(OBJS_DIR)%.o:%.c
-	@${CC} ${CFLAGS} -I${LIBFT_DIR} -I${MLX_LINUX_DIR} -I/usr/include -I${INC_DIR} -I. -O3 -o $@ -c $<
+	@${CC} ${CFLAGS} -I${LIBFT_DIR} -I${INC_DIR} -I. -o $@ -c $<
 
 # $(B_OBJS_DIR)%.o:%.c
 # 	@${CC} ${CFLAGS} -I${LIBFT_DIR} -I${MLX_DIR} -I${B_INC_DIR} -I. -o $@ -c $<
