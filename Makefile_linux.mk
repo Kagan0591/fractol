@@ -39,7 +39,6 @@ INC_DIR			= inc/
 B_INC_DIR		= bonus_inc/
 LIBFT_DIR		= 42Qc_libft/
 MLX_LINUX_DIR	= mlx_linux/
-# MLX_MAC_DIR		= mlx_mac/
 VPATH			= $(SRCS_DIR) $(B_SRCS_DIR)
 
 ## Assembling sources and objects
@@ -61,10 +60,10 @@ RM	= rm -rf
 
 ###------------------------------## REGLES ##------------------------------###
 all: obj $(NAME)
-	${LIBFT}
-	${MLX_CONFIG}
 
 ${NAME}: $(OBJS)
+	${LIBFT}
+#	${MLX_CONFIG} For recompile MLX each time uncomment
 	@${CC} ${OBJS} -L${LIBFT_DIR} -l${LIBFT_DIR} -L${MLX_LINUX_DIR} -l${MLX_LINUX_DIR} -I${MLX_LINUX_DIR} -L/usr/lib -lXext -lX11 -lft -lm -lz -o ${NAME}
 	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
 	@sleep 1

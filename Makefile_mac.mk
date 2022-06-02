@@ -38,7 +38,6 @@ B_OBJS_DIR		= bonus_objs/
 INC_DIR			= inc/
 B_INC_DIR		= bonus_inc/
 LIBFT_DIR		= 42Qc_libft/
-# MLX_LINUX_DIR	= mlx_linux/
 MLX_MAC_DIR		= mlx/
 VPATH			= $(SRCS_DIR) $(B_SRCS_DIR)
 
@@ -64,7 +63,7 @@ all: obj $(NAME)
 
 ${NAME}: $(OBJS)
 	${LIBFT}
-# ${MLX_CONFIG}
+# ${MLX_CONFIG} For recompile MLX each time uncomment
 	@${CC} ${OBJS} -L${LIBFT_DIR} -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME} -lm
 	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
 	@sleep 1

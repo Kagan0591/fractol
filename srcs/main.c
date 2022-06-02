@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/01 14:37:47 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:07:35 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,53 @@
 // 	return (buffer);
 // }
 
-int	create_trgb(int t, int r, int g, int b)
+void	parsing_args(int argc, char **argv)
 {
-	return (t << 24 | r << 16 | g << 8 | b);
+	(void) argv;
+	if (argc != 2)
+	{
+		ft_putstr_fd(strerror(22), 2);
+		exit(22);
+	}
+	if (ft_strcmp(argv[1], "Mandelbrot") == 0 \
+		|| ft_strcmp(argv[1], "mandelbrot") == 0)
+	{
+		ft_printf("Mandelbrot have been choosen\n");
+	}
+	else if (ft_strcmp(argv[1], "Julia") == 0 \
+				|| ft_strcmp(argv[1], "julia") == 0)
+	{
+		ft_printf("Julia have been choosen\n");
+	}
+	else
+	{
+		ft_putstr_fd(strerror(22), 2);
+		ft_putstr_fd("\n\nTry Mandelbrot or Julia as an argument\n", 2);
+		exit(22);
+	}
+}
+
+int	close_win(t_vars *vars)
+{
+	mlx_destroy_window(vars->mlx, vars->win);
+	return (0);
 }
 
 int	main(int argc, char **argv)
 {
-	(void) argc;
-	(void) argv;
-	void	*ptr;
+	t_vars	vars;
+
+	parsing_args(argc, argv);
 	// ft_uname();
-	ptr = mlx_init();
-	mlx_new_window(ptr, 1080, 720, "Bob");
-	mlx_loop(ptr);
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Fract-ol");
+	mlx_hook(vars.win, 2, 0, close_win, &vars);
+	mlx_loop(vars.mlx);
+
 	return (0);
 }
+
+
+
 
 

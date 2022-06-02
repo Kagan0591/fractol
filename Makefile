@@ -13,15 +13,15 @@ all: ${NAME}
 ${NAME}:
 
 bonus:
-	make -f ${NAME} bonus
+	${MAKE} -f ${NAME} bonus
 
 clean:
-	make -f ${NAME} clean
+	${MAKE} -f ${NAME} clean
 
 fclean:
-	make -f ${NAME} fclean
+	${MAKE} -f ${NAME} fclean
 
 re:
-	make -f ${NAME} re
+	${MAKE} -f ${NAME} re
 
 phony: all bonus clean fclean re

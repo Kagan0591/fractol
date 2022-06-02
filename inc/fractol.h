@@ -8,9 +8,14 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
-
-// if ()
 #include <mlx.h>
 #include "libft.h"
+
+typedef struct	s_vars
+{
+	void	*mlx;
+	void	*win;
+}				t_vars;
+
 
 #endif
