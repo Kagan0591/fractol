@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/06 14:01:38 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/06 16:34:07 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,28 +85,20 @@ int	key_hook(int key)
 
 int	main(int argc, char **argv)
 {
-	void	*mlx;
 	t_vars	vars;
 	// int		*colors = NULL;
-	void	*img;
 
 	parsing_args(argc, argv);
 	// ft_uname();
-	mlx = mlx_init();
-	// vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Fract-ol");
-	vars.img = mlx_new_image(mlx, 1920, 1080);
-	vars.addr = mlx_get_data_addr(vars.img, &vars.bits_per_pixel, &vars.line_length, vars.endian);
-	// colors[0] = create_trgb(1, 255, 255, 255);
-	// printf ("%d\n", colors[0]);
-	// mlx_pixel_put(vars.mlx, vars.win, 1920/2, 1080/2, 0xFFFFFF);
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Fract-ol");
+	vars.img = mlx_new_image(vars.mlx, 1920, 1080);
+	vars.img_addr = mlx_get_data_addr(vars.img, &vars.bits_per_pixel, &vars.line_length, &vars.endian);
+	my_mlx_pixel_put(&vars, 1920/2, 1080/2, 0xFFFFFF);
+	mlx_put_image_to_window(vars.mlx, vars.win, vars.img, 0, 0);
 	mlx_hook(vars.win, 17, 0, close_win, &vars);
 	mlx_key_hook(vars.win, key_hook, &vars);
-	mlx_loop(mlx);
+	mlx_loop(vars.mlx);
 
 	return (0);
 }
-
-
-
-
-

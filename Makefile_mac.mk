@@ -24,6 +24,7 @@ NAME			= fractol
 
 SRCS_FILES		= main.c \
 					colors.c \
+					display.c \
 
 # B_SRCS_FILES	=
 

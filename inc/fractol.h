@@ -13,13 +13,16 @@
 
 typedef struct	s_vars
 {
+	void	*mlx;
 	void	*win;
-	char	*addr;
+	void	*img;
+	char	*img_addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 }				t_vars;
 
-int	create_trgb(int t, int r, int g, int b);
+void	my_mlx_pixel_put(t_vars *data, int x, int y, int color);
+int		create_trgb(int t, int r, int g, int b);
 
 #endif
