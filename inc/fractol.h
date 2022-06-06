@@ -17,5 +17,6 @@ typedef struct	s_vars
 	void	*win;
 }				t_vars;
 
+int	create_trgb(int t, int r, int g, int b);
 
 #endif

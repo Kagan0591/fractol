@@ -23,6 +23,7 @@ WHITE		= \033[37m
 NAME			= fractol
 
 SRCS_FILES		= main.c \
+					colors.c \
 
 # B_SRCS_FILES	=
 

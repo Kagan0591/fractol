@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/02 16:07:35 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/06 10:52:05 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,31 @@ void	parsing_args(int argc, char **argv)
 int	close_win(t_vars *vars)
 {
 	mlx_destroy_window(vars->mlx, vars->win);
+	exit(0);
+}
+
+int	key_hook(int key)
+{
+	if (key == 53)
+		exit(1);
 	return (0);
 }
 
 int	main(int argc, char **argv)
 {
 	t_vars	vars;
+	// int		*colors = NULL;
 
 	parsing_args(argc, argv);
 	// ft_uname();
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Fract-ol");
-	mlx_hook(vars.win, 2, 0, close_win, &vars);
+	// colors[0] = create_trgb(1, 255, 255, 255);
+	// printf ("%d\n", colors[0]);
+
+	mlx_pixel_put(vars.mlx, vars.win, 1920/2, 1080/2, 0xFFFFFF);
+	mlx_hook(vars.win, 17, 0, close_win, &vars);
+	mlx_key_hook(vars.win, key_hook, &vars);
 	mlx_loop(vars.mlx);
 
 	return (0);
