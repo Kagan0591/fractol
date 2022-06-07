@@ -22,7 +22,11 @@ typedef struct	s_vars
 	int		endian;
 }				t_vars;
 
-void	my_mlx_pixel_put(t_vars *data, int x, int y, int color);
+void	my_mlx_pixel_put(t_vars data, int x, int y, int color);
 int		create_trgb(int t, int r, int g, int b);
+
+
+//Test-things
+int	write_a_square(t_vars vars);
 
 #endif

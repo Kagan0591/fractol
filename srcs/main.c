@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/06 16:34:07 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/07 17:52:08 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,23 @@ int	key_hook(int key)
 int	main(int argc, char **argv)
 {
 	t_vars	vars;
-	// int		*colors = NULL;
+	int		x_pos = 0;
+	int		y_pos = 0;
+	int		x_pos_keeped = 1;
+	int		y_pos_keeped = 1;
 
 	parsing_args(argc, argv);
 	// ft_uname();
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Fract-ol");
-	vars.img = mlx_new_image(vars.mlx, 1920, 1080);
-	vars.img_addr = mlx_get_data_addr(vars.img, &vars.bits_per_pixel, &vars.line_length, &vars.endian);
-	my_mlx_pixel_put(&vars, 1920/2, 1080/2, 0xFFFFFF);
-	mlx_put_image_to_window(vars.mlx, vars.win, vars.img, 0, 0);
+	write_a_square(vars);
+	mlx_mouse_get_pos(vars.win, &x_pos, &y_pos);
+	x_pos_keeped = x_pos;
+	y_pos_keeped = y_pos;
+	if (x_pos != x_pos_keeped || y_pos != y_pos_keeped)
+	{
+		printf("x = %d, y = %d", x_pos, y_pos);
+	}
 	mlx_hook(vars.win, 17, 0, close_win, &vars);
 	mlx_key_hook(vars.win, key_hook, &vars);
 	mlx_loop(vars.mlx);
