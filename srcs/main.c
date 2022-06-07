@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/07 17:52:08 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/07 17:59:32 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int	main(int argc, char **argv)
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Fract-ol");
 	write_a_square(vars);
+	mlx_mouse_hook(void *win_ptr, int (*f)(), void *param)
 	mlx_mouse_get_pos(vars.win, &x_pos, &y_pos);
 	x_pos_keeped = x_pos;
 	y_pos_keeped = y_pos;
