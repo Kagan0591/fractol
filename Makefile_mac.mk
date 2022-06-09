@@ -25,6 +25,8 @@ NAME			= fractol
 SRCS_FILES		= main.c \
 					colors.c \
 					display.c \
+					my_mlx_hooks.c \
+					my_mlx_key_hooks.c \
 
 # B_SRCS_FILES	=
 

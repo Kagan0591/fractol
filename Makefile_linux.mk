@@ -23,6 +23,10 @@ WHITE		= \033[37m
 NAME			= fractol
 
 SRCS_FILES		= main.c \
+					colors.c \
+					display.c \
+					my_mlx_hooks.c \
+					my_mlx_key_hooks.c \
 
 # B_SRCS_FILES	=
 
@@ -53,7 +57,6 @@ B_OBJS	= $(addprefix $(B_OBJS_DIR), $(B_OBJS_FILES))
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g
 LIBFT		= $(MAKE) --silent -C $(LIBFT_DIR)
-MLX_CONFIG	= $(MAKE) --silent -C ${MLX_LINUX_DIR}
 
 ## Misc var setup
 RM	= rm -rf
@@ -63,8 +66,7 @@ all: obj $(NAME)
 
 ${NAME}: $(OBJS)
 	${LIBFT}
-#	${MLX_CONFIG} For recompile MLX each time uncomment
-	@${CC} ${OBJS} -L${LIBFT_DIR} -l${LIBFT_DIR} -L${MLX_LINUX_DIR} -l${MLX_LINUX_DIR} -I${MLX_LINUX_DIR} -L/usr/lib -lXext -lX11 -lft -lm -lz -o ${NAME}
+	@${CC} ${OBJS} -L${LIBFT_DIR} -lft -L${MLX_LINUX_DIR} -L/usr/lib -lmlx_linux -I${MLX_LINUX_DIR} -lXext -lX11 -lm -lz -o ${NAME}
 	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
 	@sleep 1
 
@@ -85,13 +87,14 @@ obj:
 
 clean:
 	${LIBFT} clean
-	${MLX_CONFIG} clean
 	echo "clean"
 
-fclean:
+fclean: clean
+	${RM} ${NAME}
 	echo "fclean"
 
-re: clean all
+re: fclean all
+	${LIBFT} re
 	echo "re"
 
 phony: all bonus clean fclean re
