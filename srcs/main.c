@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/08 21:37:22 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/09 09:00:49 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,19 +89,14 @@ int	main(int argc, char **argv, char **envp)
 	write_a_square(vars);
 	mlx_hook(vars.win, 17, 0, close_win, &vars);
 	if (ft_strcmp(program_data.uname, "Linux\n") == 0)
-	{
 		mlx_key_hook(vars.win, key_binding_linux, &vars);
-	}
 	else if (ft_strcmp(program_data.uname, "Darwin") == 0)
-	{
 		mlx_key_hook(vars.win, key_binding_mac, &vars);
-	}
 	else
 	{
 		ft_putstr_fd("OS not supported\n", 2);
 		exit(-1);
 	}
-
 	mlx_loop(vars.mlx);
 
 	return (0);

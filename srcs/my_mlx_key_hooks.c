@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:39 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/08 16:38:47 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/09 09:03:39 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	key_binding_mac(int key)
 
 int	key_binding_linux(int key)
 {
-	if (key == 53)
+	if (key == 65307)
 		exit(1);
 	printf("%d\n", key);
 	return (0);
