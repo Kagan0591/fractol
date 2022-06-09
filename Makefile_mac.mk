@@ -27,6 +27,7 @@ SRCS_FILES		= main.c \
 					display.c \
 					my_mlx_hooks.c \
 					my_mlx_key_hooks.c \
+					mem.c \
 
 # B_SRCS_FILES	=
 
@@ -57,7 +58,6 @@ B_OBJS	= $(addprefix $(B_OBJS_DIR), $(B_OBJS_FILES))
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g
 LIBFT		= $(MAKE) --silent -C $(LIBFT_DIR)
-MLX_CONFIG	= $(MAKE) --silent -C ${MLX_MAC_DIR}
 
 ## Misc var setup
 RM	= rm -rf
@@ -68,7 +68,7 @@ all: obj $(NAME)
 ${NAME}: $(OBJS)
 	${LIBFT}
 # ${MLX_CONFIG} For recompile MLX each time uncomment
-	@${CC} ${OBJS} -L${LIBFT_DIR} -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME} -lm
+	@${CC} ${OBJS} -L${LIBFT_DIR} -lft -lmlx -framework OpenGL -framework AppKit -o ${NAME} -lm
 	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
 	@sleep 1
 
@@ -78,8 +78,8 @@ $(OBJS_DIR)%.o:%.c
 # $(B_OBJS_DIR)%.o:%.c
 # 	@${CC} ${CFLAGS} -I${LIBFT_DIR} -I${MLX_DIR} -I${B_INC_DIR} -I. -o $@ -c $<
 
-bonus:
-	echo "Bonus"
+# bonus:
+# 	echo "Bonus"
 
 obj:
 	mkdir -p ${OBJS_DIR}
@@ -89,13 +89,12 @@ obj:
 
 clean:
 	${LIBFT} clean
-	${MLX_CONFIG} clean
-	echo "clean"
+	rm -rf ${OBJS}
 
-fclean:
-	echo "fclean"
+fclean: clean
+	${LIBFT} fclean
+	${RM} ${NAME}
 
-re: clean all
-	echo "re"
+re: fclean all
 
 phony: all bonus clean fclean re

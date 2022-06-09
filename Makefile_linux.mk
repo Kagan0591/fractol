@@ -27,6 +27,7 @@ SRCS_FILES		= main.c \
 					display.c \
 					my_mlx_hooks.c \
 					my_mlx_key_hooks.c \
+					mem.c \
 
 # B_SRCS_FILES	=
 
@@ -87,14 +88,12 @@ obj:
 
 clean:
 	${LIBFT} clean
-	echo "clean"
+	rm -rf ${OBJS}
 
 fclean: clean
+	${LIBFT} fclean
 	${RM} ${NAME}
-	echo "fclean"
 
 re: fclean all
-	${LIBFT} re
-	echo "re"
 
 phony: all bonus clean fclean re

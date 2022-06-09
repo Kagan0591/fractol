@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/09 09:00:49 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:06:36 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_uname(char **envp)
 			exit(errno);
 		}
 	}
-	wait(0);
+	waitpid(pid_t, NULL, 0);
 	return (buffer);
 }
 
@@ -79,25 +79,30 @@ void	parsing_args(int argc, char **argv)
 
 int	main(int argc, char **argv, char **envp)
 {
-	t_vars		vars;
-	t_params	program_data;
+	t_mlx_data	mlx_data;
+	t_params	program_params_data;
+	t_data		data;
 
 	parsing_args(argc, argv);
-	program_data.uname = ft_uname(envp);
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 1280, 720, "Fract-ol");
-	write_a_square(vars);
-	mlx_hook(vars.win, 17, 0, close_win, &vars);
-	if (ft_strcmp(program_data.uname, "Linux\n") == 0)
-		mlx_key_hook(vars.win, key_binding_linux, &vars);
-	else if (ft_strcmp(program_data.uname, "Darwin") == 0)
-		mlx_key_hook(vars.win, key_binding_mac, &vars);
+	program_params_data.uname = ft_uname(envp);
+	data = init_struct_data();
+	mlx_data.mlx = mlx_init();
+	mlx_data.win = mlx_new_window(mlx_data.mlx, 1280, 720, "Fract-ol");
+	write_a_square(mlx_data, &data);
+	mlx_hook(mlx_data.win, 17, 0, close_win, &mlx_data);
+	if (ft_strcmp(program_params_data.uname, "Linux\n") == 0)
+		mlx_key_hook(mlx_data.win, key_binding_linux, &mlx_data);
+	else if (ft_strcmp(program_params_data.uname, "Darwin\n") == 0)
+	{
+		printf("ON MAC !\n");
+		mlx_key_hook(mlx_data.win, key_binding_mac, &mlx_data);
+	}
 	else
 	{
 		ft_putstr_fd("OS not supported\n", 2);
 		exit(-1);
 	}
-	mlx_loop(vars.mlx);
+	mlx_loop(mlx_data.mlx);
 
 	return (0);
 }
