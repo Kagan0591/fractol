@@ -6,19 +6,19 @@ make -f Makefile_linux.mk all
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 31 21:44:12 2022
+# Make data base, printed on Fri Jun 10 07:58:19 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
+ 
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -33,15 +33,15 @@ VSCODE_LOG_NATIVE = false
 CURDIR := /mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol
 # makefile
 SHELL = /bin/sh
-# makefile (from 'Makefile_linux.mk', line 60)
+# makefile (from 'Makefile_linux.mk', line 63)
 RM = rm -rf
-# makefile (from 'Makefile_linux.mk', line 35)
+# makefile (from 'Makefile_linux.mk', line 40)
 B_SRCS_DIR = bonus_srcs/
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/thomas/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/node
-# makefile (from 'Makefile_linux.mk', line 55)
+_ = /home/thomas/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/node
+# makefile (from 'Makefile_linux.mk', line 59)
 CFLAGS = -Wall -Werror -Wextra -g
 # makefile (from 'Makefile_linux.mk', line 18)
 BLUE = \033[34m
@@ -51,7 +51,7 @@ MAKEFILE_LIST :=  Makefile_linux.mk
 GNUMAKEFLAGS := 
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile_linux.mk', line 48)
+# makefile (from 'Makefile_linux.mk', line 52)
 OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 # environment
 P9K_SSH = 0
@@ -60,7 +60,7 @@ VSCODE_CWD = /mnt/c/Program Files/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/thomas/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/bin/remote-cli:/home/thomas/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/mingw64/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files (x86)/Calibre2/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/thomas/AppData/Local/Microsoft/WindowsApps
+PATH = /home/thomas/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/home/thomas/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/mingw64/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/thomas/AppData/Local/Microsoft/WindowsApps
 # makefile (from 'Makefile_linux.mk', line 9)
 BOLD = \033[1m
 # environment
@@ -69,25 +69,27 @@ LSCOLORS = Gxfxcxdxbxegedabagacad
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # makefile (from 'Makefile_linux.mk', line 8)
 END = \033[0m
-# makefile (from 'Makefile_linux.mk', line 47)
+# makefile (from 'Makefile_linux.mk', line 51)
 B_SRCS = $(addprefix $(B_SRCS_DIR), $(B_SRCS_FILES))
-# makefile (from 'Makefile_linux.mk', line 49)
+# makefile (from 'Makefile_linux.mk', line 53)
 B_OBJS = $(addprefix $(B_OBJS_DIR), $(B_OBJS_FILES))
 # makefile (from 'Makefile_linux.mk', line 12)
 SELECTED = \033[7m
-# makefile (from 'Makefile_linux.mk', line 43)
+# makefile (from 'Makefile_linux.mk', line 47)
 VPATH = $(SRCS_DIR) $(B_SRCS_DIR)
-# makefile (from 'Makefile_linux.mk', line 34)
+# makefile (from 'Makefile_linux.mk', line 39)
 SRCS_DIR = srcs/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-e032bb67-e408-409c-9ad1-ef561f3c39f1.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-ce96e150-9104-4a50-8f79-0bb3a475821f.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/thomas/AppData/Local/Temp/vscode-remote-wsl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/vscode-server-stable-linux-x64.tar.gz
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# makefile (from 'Makefile_linux.mk', line 40)
+# makefile (from 'Makefile_linux.mk', line 45)
 LIBFT_DIR = 42Qc_libft/
-# makefile (from 'Makefile_linux.mk', line 37)
+# makefile (from 'Makefile_linux.mk', line 42)
 B_OBJS_DIR = bonus_objs/
 # environment
 LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
@@ -100,18 +102,18 @@ URL = \033[4m
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from 'Makefile_linux.mk', line 25)
-SRCS_FILES = main.c 
+SRCS_FILES = main.c colors.c display.c my_mlx_hooks.c my_mlx_key_hooks.c mem.c 
 # environment
 PWD = /mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/12165_interop
+WSL_INTEROP = /run/WSL/1020_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # makefile (from 'Makefile_linux.mk', line 16)
 GREEN = \033[32m
-# makefile (from 'Makefile_linux.mk', line 38)
+# makefile (from 'Makefile_linux.mk', line 43)
 INC_DIR = inc/
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
@@ -127,7 +129,7 @@ ZSH = /home/thomas/.oh-my-zsh
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# makefile (from 'Makefile_linux.mk', line 41)
+# makefile (from 'Makefile_linux.mk', line 46)
 MLX_LINUX_DIR = mlx_linux/
 # environment
 MAKELEVEL := 1
@@ -135,15 +137,15 @@ MAKELEVEL := 1
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# makefile (from 'Makefile_linux.mk', line 46)
+# makefile (from 'Makefile_linux.mk', line 50)
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 # environment
 SHLVL = 0
 # makefile (from 'Makefile_linux.mk', line 21)
 WHITE = \033[37m
-# makefile (from 'Makefile_linux.mk', line 56)
+# makefile (from 'Makefile_linux.mk', line 60)
 LIBFT = $(MAKE) --silent -C $(LIBFT_DIR)
-# makefile (from 'Makefile_linux.mk', line 54)
+# makefile (from 'Makefile_linux.mk', line 58)
 CC = gcc
 # makefile (from 'Makefile_linux.mk', line 19)
 VIOLET = \033[35m
@@ -154,7 +156,7 @@ USER = thomas
 # makefile
 .DEFAULT_GOAL := all
 # makefile (from 'Makefile_linux.mk', line 23)
-NAME = pipex
+NAME = fractol
 # environment
 LESS = -R
 # automatic
@@ -179,7 +181,7 @@ MFLAGS = -pqrRw
 *D = $(patsubst %/,%,$(dir $*))
 # makefile (from 'Makefile_linux.mk', line 14)
 BLACK = \033[30m
-# makefile (from 'Makefile_linux.mk', line 36)
+# makefile (from 'Makefile_linux.mk', line 41)
 OBJS_DIR = objs/
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
@@ -191,11 +193,9 @@ YELLOW = \033[33m
 VSCODE_HANDLES_SIGPIPE = true
 # default
 MAKEFILES := 
-# makefile (from 'Makefile_linux.mk', line 57)
-MLX_CONFIG = $(MAKE) --silent -C ${MLX_LINUX_DIR}
 # automatic
 <F = $(notdir $<)
-# makefile (from 'Makefile_linux.mk', line 30)
+# makefile (from 'Makefile_linux.mk', line 35)
 OBJS_FILES = $(SRCS_FILES:.c=.o)
 # environment
 PAGER = less
@@ -215,7 +215,7 @@ WAYLAND_DISPLAY = wayland-0
 ITALIC = \033[3m
 # default
 .RECIPEPREFIX := 
-# makefile (from 'Makefile_linux.mk', line 39)
+# makefile (from 'Makefile_linux.mk', line 44)
 B_INC_DIR = bonus_inc/
 # environment
 LANG = C
@@ -237,19 +237,35 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 # Directories
 
 # bonus_srcs: could not be stat'd.
-# srcs (device 64, inode 26458647810810363): 3 files, no impossibilities.
+# srcs (device 64, inode 26458647810810363): 8 files, no impossibilities.
 
-# 3 files, no impossibilities in 2 directories.
+# 8 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 objs/%.o: %.c
-#  recipe to execute (from 'Makefile_linux.mk', line 73):
+#  recipe to execute (from 'Makefile_linux.mk', line 75):
 	@${CC} ${CFLAGS} -I${LIBFT_DIR} -I${MLX_LINUX_DIR} -I/usr/include -I${INC_DIR} -I. -O3 -o $@ -c $<
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
+
+fractol: objs/main.o objs/colors.o objs/display.o objs/my_mlx_hooks.o objs/my_mlx_key_hooks.o objs/mem.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile_linux.mk', line 69):
+	${LIBFT}
+	@${CC} ${OBJS} -L${LIBFT_DIR} -lft -L${MLX_LINUX_DIR} -L/usr/lib -lmlx_linux -I${MLX_LINUX_DIR} -lXext -lX11 -lm -lz -o ${NAME}
+	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
+	@sleep 1
+
+# Not a target:
+objs/colors.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 objs/main.o:
@@ -257,17 +273,14 @@ objs/main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-all: obj pipex
+all: obj fractol
 #  Command line target.
-#  Implicit rule search has not been done.
+#  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-#  recipe to execute (from 'Makefile_linux.mk', line 64):
-	${LIBFT}
-	${MLX_CONFIG}
 
 phony: all bonus clean fclean re
 #  Implicit rule search has not been done.
@@ -278,21 +291,35 @@ phony: all bonus clean fclean re
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
+#  File has not been updated.
+
+# Not a target:
+objs/my_mlx_key_hooks.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/my_mlx_hooks.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 bonus:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile_linux.mk', line 79):
+#  recipe to execute (from 'Makefile_linux.mk', line 81):
 	echo "Bonus"
 
-fclean:
+fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile_linux.mk', line 93):
-	echo "fclean"
+#  recipe to execute (from 'Makefile_linux.mk', line 94):
+	${LIBFT} fclean
+	${RM} ${NAME}
 
 obj:
 #  Implicit rule search has not been done.
@@ -318,7 +345,7 @@ obj:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/12=8%
-#  recipe to execute (from 'Makefile_linux.mk', line 82):
+#  recipe to execute (from 'Makefile_linux.mk', line 84):
 	mkdir -p ${OBJS_DIR}
 
 # Not a target:
@@ -327,40 +354,40 @@ obj:
 #  Modification time never checked.
 #  File has not been updated.
 
-re: clean all
+re: fclean all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile_linux.mk', line 96):
-	echo "re"
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile_linux.mk', line 88):
+#  recipe to execute (from 'Makefile_linux.mk', line 90):
 	${LIBFT} clean
-	${MLX_CONFIG} clean
-	echo "clean"
+	rm -rf ${OBJS}
 
-pipex: objs/main.o
+# Not a target:
+objs/display.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile_linux.mk', line 68):
-	@${CC} ${OBJS} -L${LIBFT_DIR} -l${LIBFT_DIR} -L${MLX_LINUX_DIR} -l${MLX_LINUX_DIR} -I${MLX_LINUX_DIR} -L/usr/lib -lXext -lX11 -lft -lm -lz -o ${NAME}
-	@echo "\n${BLUE}${BOLD}An executable '${GREEN} fractol ${END}${BLUE}${BOLD}' have been created successfully!${END}"
-	@sleep 1
+
+# Not a target:
+objs/mem.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile_linux.mk:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-31 15:33:12.1298541
+#  Last modified 2022-06-09 16:32:37.3627801
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/42=0%
+# Load=17/1024=2%, Rehash=0, Collisions=1/53=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -368,14 +395,13 @@ Makefile_linux.mk:
 # General ('VPATH' variable) search path:
 # srcs:bonus_srcs
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 166 B / avg = 7 B
-# current buf: size = 8162 B / used = 166 B / count = 22 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 311 B / avg = 9 B
+# current buf: size = 8162 B / used = 311 B / count = 32 / avg = 9 B
 
-# strcache performance: lookups = 46 / hit rate = 52%
+# strcache performance: lookups = 57 / hit rate = 43%
 # hash-table stats:
- 
-# Load=22/8192=0%, Rehash=0, Collisions=1/46=2%
-# Finished Make data base on Tue May 31 21:44:12 2022
+# Load=32/8192=0%, Rehash=0, Collisions=1/57=2%
+# Finished Make data base on Fri Jun 10 07:58:19 2022
 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -384,7 +410,7 @@ Makefile_linux.mk:
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 31 21:44:12 2022
+# Make data base, printed on Fri Jun 10 07:58:19 2022
 
 # Variables
 
@@ -393,7 +419,7 @@ Makefile_linux.mk:
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -411,7 +437,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/thomas/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/node
+_ = /home/thomas/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/node
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # 'override' directive
@@ -425,7 +451,7 @@ VSCODE_CWD = /mnt/c/Program Files/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/thomas/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/bin/remote-cli:/home/thomas/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/mingw64/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files (x86)/Calibre2/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/thomas/AppData/Local/Microsoft/WindowsApps
+PATH = /home/thomas/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/home/thomas/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/mingw64/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/thomas/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/thomas/AppData/Local/Microsoft/WindowsApps
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -433,7 +459,9 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-e032bb67-e408-409c-9ad1-ef561f3c39f1.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-ce96e150-9104-4a50-8f79-0bb3a475821f.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/thomas/AppData/Local/Temp/vscode-remote-wsl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/vscode-server-stable-linux-x64.tar.gz
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -449,7 +477,7 @@ PWD = /mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/12165_interop
+WSL_INTEROP = /run/WSL/1020_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -541,7 +569,8 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
 # variable set hash-table stats:
-# Load=76/1024=7%, Rehash=0, Collisions=4/119=3%
+# Load=77/1024=8%, Rehash=0, Collisions=4/120=3%
+ 
 
 # Pattern-specific Variable Values
 
@@ -549,9 +578,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 64, inode 52072870691474338): 18 files, no impossibilities.
+# . (device 64, inode 52072870691474338): 15 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -601,7 +630,7 @@ phony: all bonus clean fclean re
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-31 10:07:37.9881739
+#  Last modified 2022-06-06 12:45:37.2448846
 #  File has been updated.
 #  Successfully updated.
 
@@ -610,14 +639,14 @@ bonus:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 16):
-	make -f ${NAME} bonus
+	${MAKE} -f ${NAME} bonus
 
 fclean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 22):
-	make -f ${NAME} fclean
+	${MAKE} -f ${NAME} fclean
 
 # Not a target:
 .DEFAULT:
@@ -630,18 +659,18 @@ re:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 25):
-	make -f ${NAME} re
+	${MAKE} -f ${NAME} re
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
-	make -f ${NAME} clean
+	${MAKE} -f ${NAME} clean
 
 Makefile_linux.mk:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-31 15:33:12.1298541
+#  Last modified 2022-06-09 16:32:37.3627801
 #  File has been updated.
 #  Successfully updated.
 
@@ -652,14 +681,13 @@ Makefile_linux.mk:
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
- 
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 237 B / avg = 8 B
-# current buf: size = 8162 B / used = 237 B / count = 28 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 25 / storage = 209 B / avg = 8 B
+# current buf: size = 8162 B / used = 209 B / count = 25 / avg = 8 B
 
-# strcache performance: lookups = 48 / hit rate = 41%
+# strcache performance: lookups = 45 / hit rate = 44%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=1/48=2%
-# Finished Make data base on Tue May 31 21:44:12 2022
+# Load=25/8192=0%, Rehash=0, Collisions=1/45=2%
+# Finished Make data base on Fri Jun 10 07:58:19 2022
 
  
