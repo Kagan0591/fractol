@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:57:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/09 15:06:36 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/07/14 17:13:17 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,15 +87,19 @@ int	main(int argc, char **argv, char **envp)
 	program_params_data.uname = ft_uname(envp);
 	data = init_struct_data();
 	mlx_data.mlx = mlx_init();
-	mlx_data.win = mlx_new_window(mlx_data.mlx, 1280, 720, "Fract-ol");
-	write_a_square(mlx_data, &data);
+	mlx_data.win = mlx_new_window(mlx_data.mlx, 1920, 1080, "Fract-ol");
+	mlx_data.img_addr = mlx_new_image(mlx_data.mlx, 1920, 1080);
+	write_a_square(mlx_data, &data, data.start_pixel_pos_x, data.start_pixel_pos_y);
 	mlx_hook(mlx_data.win, 17, 0, close_win, &mlx_data);
 	if (ft_strcmp(program_params_data.uname, "Linux\n") == 0)
 		mlx_key_hook(mlx_data.win, key_binding_linux, &mlx_data);
 	else if (ft_strcmp(program_params_data.uname, "Darwin\n") == 0)
 	{
 		printf("ON MAC !\n");
-		mlx_key_hook(mlx_data.win, key_binding_mac, &mlx_data);
+		printf("MAIN_pixel_pos_x = %d\n", data.start_pixel_pos_x);
+		printf("MAIN_pixel_pos_y = %d\n", data.start_pixel_pos_y);
+		mlx_hook(mlx_data.win, 2, 3, key_binding_mac, &data);
+		// mlx_loop_hook(mlx_data.mlx, key_binding_mac, &data);
 	}
 	else
 	{

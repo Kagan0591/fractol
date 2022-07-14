@@ -19,8 +19,8 @@ typedef struct	s_params
 
 typedef struct	s_data
 {
-	int		pixel_pos_x;
-	int		pixel_pos_y;
+	int		start_pixel_pos_x;
+	int		start_pixel_pos_y;
 }				t_data;
 
 typedef struct	s_mlx_data
@@ -37,14 +37,14 @@ typedef struct	s_mlx_data
 t_data	init_struct_data(void);
 void	my_mlx_pixel_put(t_mlx_data data, int x, int y, int color);
 int		close_win(t_mlx_data vars);
-int		key_binding_mac(t_mlx_data mlx_data, t_data *data, int key);
-int		key_binding_linux(t_mlx_data mlx_data, t_data *data, int key);
+int		key_binding_mac(t_mlx_data mlx_data, int key, t_data *data);
+int		key_binding_linux(t_mlx_data mlx_data, int key, t_data *data);
 int		create_trgb(int t, int r, int g, int b);
 // void	square_displacement_left(t_vars data);
 // void	displacement_left(t_vars data);
 
 
 //Test-things
-int	write_a_square(t_mlx_data mlx_data, t_data *data);
+int	write_a_square(t_mlx_data mlx_data, t_data *data, int x, int y);
 
 #endif

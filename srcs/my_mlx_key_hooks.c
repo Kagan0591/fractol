@@ -6,33 +6,56 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:39 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/09 15:05:17 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/07/14 17:13:10 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	key_binding_mac(t_mlx_data mlx_data, t_data *data, int key)
+int	key_binding_mac(t_mlx_data mlx_data, int key, t_data *data)
 {
 	// printf("TEST\n");
 	if (key == 53)
 		exit(1);
-	if (key == 123) // left
+	if (key == 123) // LEFT
 	{
-		data->pixel_pos_x++;
-		printf("Valeur de data->x = %d\n", data->pixel_pos_x);
-		printf("Valeur de data->y = %d\n", data->pixel_pos_y);
-		//mlx_destroy_image(data.mlx, data.img_addr);
-		write_a_square(mlx_data, data);
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		data->start_pixel_pos_x--;
+		printf("My key %d\n", key);
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		// printf("Valeur de data->y = %d\n", data->pixel_pos_y);
 	}
-	// if (key == 65362) // top
-	// if (key == 65363) // right
-	// if (key == 65364) // down
-	printf("%d\n", key);
+	if (key == 124) // RIGHT
+	{
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		data->start_pixel_pos_x++;
+		printf("My key %d\n", key);
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		// printf("Valeur de data->y = %d\n", data->pixel_pos_y);
+	}
+	if (key == 125) // DOWN
+	{
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		data->start_pixel_pos_y++;
+		printf("My key %d\n", key);
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		// printf("Valeur de data->y = %d\n", data->pixel_pos_y);
+	}
+	if (key == 126) // UP
+	{
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		printf ("%d\n", data->start_pixel_pos_y);
+		data->start_pixel_pos_y--;
+		printf("My key %d\n", key);
+		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
+		// printf("Valeur de data->y = %d\n", data->pixel_pos_y);
+	}
+	mlx_destroy_image(mlx_data.mlx, mlx_data.img_addr);
+	write_a_square(mlx_data, data, data->start_pixel_pos_x, data->start_pixel_pos_y);
 	return (0);
 }
 
-int	key_binding_linux(t_mlx_data mlx_data, t_data *data, int key)
+int	key_binding_linux(t_mlx_data mlx_data, int key, t_data *data)
 {
 	(void) data;
 	(void) mlx_data;
