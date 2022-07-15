@@ -1,24 +1,21 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
+make: Entering directory `/Users/tchalifo/Documents/fractol'
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f Makefile_mac.mk all
  
-make -f Makefile_linux.mk all
- 
-make[1]: Entering directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
+make[1]: Entering directory `/Users/tchalifo/Documents/fractol'
 mkdir -p objs/
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Imlx_linux/ -I/usr/include -Iinc/ -I. -O3 -o objs/main.o -c srcs/main.c
  
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Imlx_linux/ -I/usr/include -Iinc/ -I. -O3 -o objs/colors.o -c srcs/colors.c
- 
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Imlx_linux/ -I/usr/include -Iinc/ -I. -O3 -o objs/display.o -c srcs/display.c
- 
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Imlx_linux/ -I/usr/include -Iinc/ -I. -O3 -o objs/my_mlx_hooks.o -c srcs/my_mlx_hooks.c
- 
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Imlx_linux/ -I/usr/include -Iinc/ -I. -O3 -o objs/my_mlx_key_hooks.o -c srcs/my_mlx_key_hooks.c
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Imlx_linux/ -I/usr/include -Iinc/ -I. -O3 -o objs/mem.o -c srcs/mem.c
-make --silent -C 42Qc_libft/
-gcc objs/main.o objs/colors.o objs/display.o objs/my_mlx_hooks.o objs/my_mlx_key_hooks.o objs/mem.o -L42Qc_libft/ -lft -Lmlx_linux/ -L/usr/lib -lmlx_linux -Imlx_linux/ -lXext -lX11 -lm -lz -o fractol
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/main.o -c srcs/main.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/colors.o -c srcs/colors.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/display.o -c srcs/display.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/my_mlx_hooks.o -c srcs/my_mlx_hooks.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/my_mlx_key_hooks.o -c srcs/my_mlx_key_hooks.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/mem.o -c srcs/mem.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/os.o -c srcs/os.c
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --silent -C 42Qc_libft/
+gcc objs/main.o objs/colors.o objs/display.o objs/my_mlx_hooks.o objs/my_mlx_key_hooks.o objs/mem.o objs/os.o -L42Qc_libft/ -lft -lmlx -framework OpenGL -framework AppKit -o fractol -lm
 echo "\n\033[34m\033[1mAn executable '\033[32m fractol \033[0m\033[34m\033[1m' have been created successfully!\033[0m"
 sleep 1
-make[1]: Leaving directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
-make: Leaving directory '/mnt/c/Users/thomas/Documents/Programmation/42Qc_fractol'
+make[1]: Leaving directory `/Users/tchalifo/Documents/fractol'
+make: Leaving directory `/Users/tchalifo/Documents/fractol'
  

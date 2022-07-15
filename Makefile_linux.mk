@@ -23,11 +23,15 @@ WHITE		= \033[37m
 NAME			= fractol
 
 SRCS_FILES		= main.c \
+					os.c \
 					colors.c \
-					display.c \
+					window.c \
+					draws.c \
+					hooks.c \
 					my_mlx_hooks.c \
 					my_mlx_key_hooks.c \
 					mem.c \
+					square.c \
 
 # B_SRCS_FILES	=
 

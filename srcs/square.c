@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display.c                                          :+:      :+:    :+:   */
+/*   square.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 16:18:32 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/07/14 17:10:42 by tchalifo         ###   ########.fr       */
+/*   Created: 2022/07/15 09:36:09 by tchalifo          #+#    #+#             */
+/*   Updated: 2022/07/15 11:09:41 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	my_mlx_pixel_put(t_mlx_data mlx_data, int x, int y, int color)
+void	print_a_square(t_mlx_data *mlx_data, t_data *data)
 {
-	char	*dst;
+	mlx_data->img_addr = mlx_new_image(mlx_data->mlx, 1920, 1080);
+	write_a_square(mlx_data, data, data->start_pixel_pos_x, data->start_pixel_pos_y);
 
-	dst = mlx_data.pixel_addr + (y * mlx_data.line_length + x * (mlx_data.bits_per_pixel / 8));
-//	printf("%s:%d\n", __FUNCTION__, __LINE__);
-	*(unsigned int*)dst = color;
-//	printf("%s:%d\n", __FUNCTION__, __LINE__);
 }
 
-int	write_a_square(t_mlx_data mlx_data, t_data *data, int x, int y)
+int	write_a_square(t_mlx_data *mlx_data, t_data *data, int x, int y)
 {
 	int	square_size_width;
 	int	square_size_height;
@@ -31,11 +28,9 @@ int	write_a_square(t_mlx_data mlx_data, t_data *data, int x, int y)
 
 	square_size_width = 0;
 	square_size_height = 0;
-	printf("%s___pixel_pos_x = %d\n", __FUNCTION__, data->start_pixel_pos_x);
-	printf("%s___pixel_pos_y = %d\n", __FUNCTION__, data->start_pixel_pos_y);
 	x_cpy = x;
 	y_cpy = y;
-	mlx_data.pixel_addr = mlx_get_data_addr(mlx_data.img_addr, &mlx_data.bits_per_pixel, &mlx_data.line_length, &mlx_data.endian);
+	mlx_data->pixel_addr = mlx_get_data_addr(mlx_data->img_addr, &mlx_data->bits_per_pixel, &mlx_data->line_length, &mlx_data->endian);
 	while (square_size_width < 100)
 	{
 		y_cpy = data->start_pixel_pos_y;
@@ -50,12 +45,9 @@ int	write_a_square(t_mlx_data mlx_data, t_data *data, int x, int y)
 		square_size_width++;
 	}
 	// mlx_put_image_to_window(mlx_data.mlx, mlx_data.win, mlx_data.img_addr, ((1920/2)-50), ((1080/2)-50));
-	mlx_put_image_to_window(mlx_data.mlx, mlx_data.win, mlx_data.img_addr, 0, 0);
-	printf("%s_END___pixel_pos_x = %d\n", __FUNCTION__, data->start_pixel_pos_x);
-	printf("%s_END___pixel_pos_y = %d\n", __FUNCTION__, data->start_pixel_pos_y);
+	mlx_put_image_to_window(mlx_data->mlx, mlx_data->win, mlx_data->img_addr, 0, 0);
 	return (0);
 }
-
 
 // void	square_displacement_left(t_vars data)
 // {
