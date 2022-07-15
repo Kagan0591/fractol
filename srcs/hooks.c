@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 14:06:54 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/07/15 16:37:03 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/07/15 16:42:09 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	keys_hooks_manager(t_mlx_data *mlx_data, t_data *data, t_params program_par
 	printf("ON MAC !\n");
 	printf("MAIN_pixel_pos_x = %d\n", data->start_pixel_pos_x);
 	printf("MAIN_pixel_pos_y = %d\n", data->start_pixel_pos_y);
-	mlx_key_hook(mlx_data->win, key_binding_mac, mlx_data);
-	// mlx_hook(mlx_data->win, 2, 0, key_binding_mac, &mlx_data);
+	// mlx_key_hook(mlx_data->win, key_binding_mac, mlx_data);
+	mlx_hook(mlx_data->win, 2, 0, key_binding_mac, &mlx_data);
 		// mlx_loop_hook(mlx_data.mlx, key_binding_mac, &data);
 	// }
 	// else
