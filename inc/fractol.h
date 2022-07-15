@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 14:30:47 by tchalifo          #+#    #+#             */
+/*   Updated: 2022/07/15 14:30:49 by tchalifo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 #define FRACTOL_H
 
@@ -8,8 +20,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
-#include <mlx.h> // Uncomment for Mac
-// #include "mlx.h" // Uncomment for Linux
+#include <mlx.h>	// Uncomment for Mac
+// #include "mlx.h"	// Uncomment for Linux
 #include "libft.h"
 
 typedef struct	s_params
