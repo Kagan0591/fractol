@@ -6,15 +6,17 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:39 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/07/15 10:02:15 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/07/15 16:34:09 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	key_binding_mac(t_mlx_data mlx_data, int key, t_data *data)
+int	key_binding_mac(t_mlx_data *mlx_data, int key, t_data *data)
 {
 	// printf("TEST\n");
+	// key  = 0;
+	(void) mlx_data;
 	if (key == 53)
 		exit(1);
 	if (key == 123) // LEFT
@@ -50,8 +52,9 @@ int	key_binding_mac(t_mlx_data mlx_data, int key, t_data *data)
 		// printf("Valeur de data->x = %d\n", data->pixel_pos_x);
 		// printf("Valeur de data->y = %d\n", data->pixel_pos_y);
 	}
-	mlx_destroy_image(mlx_data.mlx, mlx_data.img_addr);
-	write_a_square(&mlx_data, data, data->start_pixel_pos_x, data->start_pixel_pos_y);
+	printf("TEST KEY HOOK\n");
+	printf("My key %d\n", key);
+	// mlx_destroy_image(mlx_data->mlx, mlx_data->img_addr);
 	return (0);
 }
 

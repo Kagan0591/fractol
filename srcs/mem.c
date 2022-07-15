@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:45:28 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/07/15 10:07:11 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/07/15 16:27:07 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_data	*init_struct_data(void)
 {
 	t_data	*data;
 	data = malloc(sizeof(t_data));
-	data->start_pixel_pos_x = 0;
+	data->start_pixel_pos_x = 100;
 	data->start_pixel_pos_y = 0;
 	return (data);
 }

@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 14:30:47 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/07/15 14:30:49 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/07/15 15:17:47 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		my_mlx_pixel_put(t_mlx_data *mlx_data, int x, int y, int color);
 void		window_hooks_manager(t_mlx_data *mlx_data);
 int			close_win(t_mlx_data vars);
 void		keys_hooks_manager(t_mlx_data *mlx_data, t_data *data, t_params program_params_data);
-int			key_binding_mac(t_mlx_data mlx_data, int key, t_data *data);
+int			key_binding_mac(t_mlx_data *mlx_data, int key, t_data *data);
 int			key_binding_linux(t_mlx_data mlx_data, int key, t_data *data);
 void		mouse_hooks_manager(t_mlx_data *mlx_data, t_data *data, t_params program_params_data);
 int			create_trgb(int t, int r, int g, int b);
