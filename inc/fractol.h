@@ -5,37 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 14:30:47 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/07/15 15:17:47 by tchalifo         ###   ########.fr       */
+/*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
+/*   Updated: 2022/08/13 18:01:39 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 #define FRACTOL_H
-
-#include <unistd.h>
+#define WIN_WIDTH 1280 //X
+#define WIN_HEIGHT 720 //Y
+#include "libft.h"
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <errno.h>
 #include <mlx.h>	// Uncomment for Mac
 // #include "mlx.h"	// Uncomment for Linux
-#include "libft.h"
 
-typedef struct	s_params
-{
-	char	*uname;
-}				t_params;
-
-typedef struct	s_data
-{
-	int		start_pixel_pos_x;
-	int		start_pixel_pos_y;
-}				t_data;
-
-typedef struct	s_mlx_data
+/*
+ * Struct containing all mlx related vars
+ */
+typedef struct s_mlx
 {
 	void	*mlx;
 	void	*win;
@@ -44,28 +35,24 @@ typedef struct	s_mlx_data
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_mlx_data;
+}	t_mlx;
 
-// [ Params function ]
-char		*ft_uname(char **envp);
+/*
+ * Struct for fractal options
+ */
+typedef struct	s_fractal_options
+{
+	int	type;
+}	t_fractal_options;
 
-// [ Program function ]
-t_data		*init_struct_data(void);
-t_mlx_data	*init_struct_mlx_data(void);
-void		init_windows(t_mlx_data *mlx_data, int size_x, int size_y, char *window_name);
-void		my_mlx_pixel_put(t_mlx_data *mlx_data, int x, int y, int color);
-void		window_hooks_manager(t_mlx_data *mlx_data);
-int			close_win(t_mlx_data vars);
-void		keys_hooks_manager(t_mlx_data *mlx_data, t_data *data, t_params program_params_data);
-int			key_binding_mac(t_mlx_data *mlx_data, int key, t_data *data);
-int			key_binding_linux(t_mlx_data mlx_data, int key, t_data *data);
-void		mouse_hooks_manager(t_mlx_data *mlx_data, t_data *data, t_params program_params_data);
-int			create_trgb(int t, int r, int g, int b);
-// void	square_displacement_left(t_vars data);
-// void	displacement_left(t_vars data);
+/*
+ * Main struct containing others struct
+ */
+typedef struct s_fractol
+{
+	t_fractal_options f_opt;
+	t_mlx mlx;
+}	t_fractol;
 
-// [ Testhings ]
-void		print_a_square(t_mlx_data *mlx_data, t_data *data);
-int			write_a_square(t_mlx_data *mlx_data, t_data *data, int x, int y);
 
 #endif

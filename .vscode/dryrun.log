@@ -6,14 +6,17 @@ make[1]: Entering directory `/Users/tchalifo/Documents/fractol'
 mkdir -p objs/
  
 gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/main.o -c srcs/main.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/os.o -c srcs/os.c
 gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/colors.o -c srcs/colors.c
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/display.o -c srcs/display.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/window.o -c srcs/window.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/draws.o -c srcs/draws.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/hooks.o -c srcs/hooks.c
 gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/my_mlx_hooks.o -c srcs/my_mlx_hooks.c
 gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/my_mlx_key_hooks.o -c srcs/my_mlx_key_hooks.c
 gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/mem.o -c srcs/mem.c
-gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/os.o -c srcs/os.c
+gcc -Wall -Werror -Wextra -g -I42Qc_libft/ -Iinc/ -I. -o objs/square.o -c srcs/square.c
 /Applications/Xcode.app/Contents/Developer/usr/bin/make --silent -C 42Qc_libft/
-gcc objs/main.o objs/colors.o objs/display.o objs/my_mlx_hooks.o objs/my_mlx_key_hooks.o objs/mem.o objs/os.o -L42Qc_libft/ -lft -lmlx -framework OpenGL -framework AppKit -o fractol -lm
+gcc objs/main.o objs/os.o objs/colors.o objs/window.o objs/draws.o objs/hooks.o objs/my_mlx_hooks.o objs/my_mlx_key_hooks.o objs/mem.o objs/square.o -L42Qc_libft/ -lft -lmlx -framework OpenGL -framework AppKit -o fractol -lm
 echo "\n\033[34m\033[1mAn executable '\033[32m fractol \033[0m\033[34m\033[1m' have been created successfully!\033[0m"
 sleep 1
 make[1]: Leaving directory `/Users/tchalifo/Documents/fractol'
