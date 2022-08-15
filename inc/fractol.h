@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/13 18:01:39 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/15 15:57:13 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,15 @@ typedef struct s_fractol
 	t_fractal_options f_opt;
 	t_mlx mlx;
 }	t_fractol;
+
+void			init_mlx(t_fractol *f_struct);
+void			my_mlx_pixel_put(t_mlx *mlx_data, int x, int y, int color);
+void			fractol_exit(t_fractol *f_struct);
+void			window_hooks_manager(t_mlx *mlx_data);
+void			keys_hooks_manager(t_mlx *mlx_data, t_data *data, t_params program_params_data);
+void			mouse_hooks_manager(t_mlx *mlx_data, t_data *data, t_params program_params_data);
+int				key_binding_mac(int key, t_mlx *mlx_data, t_data *data);
+int				key_binding_linux(int key, t_mlx mlx_data, t_data *data);
 
 
 #endif
