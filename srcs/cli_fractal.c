@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:24:44 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/22 16:35:10 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/22 17:03:01 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	draw_fractal_cli(void)
 	int pos_x;
 	int pos_y;
 	int i;
-	long double n;
+	long double n; //size
 	long double x;
 	long double y;
 	long double xx;
@@ -51,7 +51,6 @@ void	draw_fractal_cli(void)
 				printf(".");
 			else
 				printf(" ");
-			// printf("iter test %d", i);
 		}
 		pos_y++;
 		printf("\n");
