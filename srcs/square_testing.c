@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 09:54:56 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/15 10:39:59 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/22 11:06:20 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	write_a_square(t_mlx *mlx, int size_x, int size_y, int init_x_pos, int init_
 		}
 		y_pos++;
 	}
-	// mlx_put_image_to_window(mlx_data.mlx, mlx_data.win, mlx_data.img_addr, ((1920/2)-50), ((1080/2)-50));
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_addr, 0, 0);
 	return (0);
 }

@@ -6,17 +6,15 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/15 15:57:11 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/22 11:04:14 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	key_binding_mac(int key, t_mlx *mlx_data, t_data *data)
+int	key_binding_mac(int key, t_mlx *mlx)
 {
-	// printf("TEST\n");
-	// key  = 0;
-	(void) mlx_data;
+	(void) mlx;
 	if (key == 53)
 		exit(1);
 	else if (key == 123) // LEFT
@@ -53,14 +51,12 @@ int	key_binding_mac(int key, t_mlx *mlx_data, t_data *data)
 	return (0);
 }
 
-int	key_binding_linux(int key, t_mlx_data mlx_data, t_data *data)
+int	key_binding_linux(int key, t_mlx *mlx)
 {
-	(void) data;
-	(void) mlx_data;
+	(void) mlx;
 	if (key == 65307)
 		exit(1);
 	if (key == 65361) // left
-		displacement_left(data);
 	if (key == 65362) // top
 	if (key == 65363) // right
 	if (key == 65364) // down

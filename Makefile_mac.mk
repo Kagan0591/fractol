@@ -25,6 +25,9 @@ NAME			= fractol
 SRCS_FILES		= main.c \
 				  square_testing.c \
 				  mlx_utils.c \
+				  hooks.c \
+				  key_bind.c \
+				  cli_fractal.c \
 
 # B_SRCS_FILES	=
 
