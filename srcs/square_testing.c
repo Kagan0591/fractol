@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   square_testing.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 09:54:56 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/22 11:06:20 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:43:19 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

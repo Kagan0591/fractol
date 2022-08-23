@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:04:05 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/22 11:31:29 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:16:07 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	close_win(t_fractol *f_struct)
+static int	close_win(t_fractol *f)
 {
-	fractol_exit(f_struct);
+	fractol_exit(f);
 	return (0);
 }
 

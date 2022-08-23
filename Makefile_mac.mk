@@ -27,7 +27,9 @@ SRCS_FILES		= main.c \
 				  mlx_utils.c \
 				  hooks.c \
 				  key_bind.c \
-				  cli_fractal.c \
+				  fractals.c \
+				  cli_fractals.c \
+				  colors.c \
 
 # B_SRCS_FILES	=
 
