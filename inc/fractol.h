@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/29 13:11:21 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:26:28 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ typedef struct s_formula_values
 	long double	zx;
 	long double	zy;
 	long double	size;
+	int			x_axis_plane;
+	int			y_axis_plane;
 }t_formula_values;
 
 /*
