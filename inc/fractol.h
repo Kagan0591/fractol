@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/23 15:38:12 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/29 13:11:21 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 # define WIN_WIDTH 1280 //X
 # define WIN_HEIGHT 720 //Y
+# define FRACTAL_ITER 50
 # include "libft.h"
 # include <stdio.h>
 # include <unistd.h>
@@ -73,10 +74,12 @@ typedef struct s_fractol
 void			init_mlx(t_fractol *f_struct);
 void			my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 void			fractol_exit(t_fractol *f_struct);
-void			window_hooks_manager(t_mlx *mlx);
-void			keys_hooks_manager(t_mlx *mlx);
+void			window_hooks_manager(t_fractol *f);
+// void			keys_hooks_manager(t_mlx *mlx);
+void			keys_hooks_manager(t_fractol *f);
 void			mouse_hooks_manager(t_mlx *mlx);
-int				key_binding_mac(int key, t_mlx *mlx);
+// int				key_binding_mac(int key, t_mlx *mlx);
+int				key_binding_mac(int key, t_fractol *f);
 // int				key_binding_linux(int key, t_mlx *mlx);
 /*
  * Testing functions

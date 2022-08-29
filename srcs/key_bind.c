@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   key_bind.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/22 11:04:14 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/29 13:08:00 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../inc/fractol.h"
 
-int	key_binding_mac(int key, t_mlx *mlx)
+int	key_binding_mac(int key, t_fractol *f)
 {
-	(void) mlx;
 	if (key == 53)
-		exit(1);
+		fractol_exit(f);
 	else if (key == 123) // LEFT
 	{
 		// data->start_pixel_pos_x--;
@@ -47,7 +46,7 @@ int	key_binding_mac(int key, t_mlx *mlx)
 	}
 	else
 		printf("Others Key pressed --> %d\n", key);
-	// mlx_destroy_image(mlx_data->mlx, mlx_data->img_addr);
+	//mlx_destroy_image(mlx_data->mlx, mlx_data->img_addr);
 	return (0);
 }
 

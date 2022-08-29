@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/23 15:44:45 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:23:55 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ int	main(int argc, char **argv, char **envp)
 	// mlx_string_put(f->mlx.mlx, f->mlx.win, 50, 650, 0xFFFFFF, "My Test");
 	// draw_fractal_cli();
 	/* END OF TEST */
-	keys_hooks_manager(&f->mlx);
+	keys_hooks_manager(f);
+	window_hooks_manager(f);
 	mlx_loop(f->mlx.mlx);
 	return (0);
 }

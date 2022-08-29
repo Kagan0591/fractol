@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 08:15:40 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/23 16:01:15 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:03:59 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	mandelbrot(t_fractol *f)
 	long double x_tmp;
 
 	f->mandelbrot.y_pos = 0;
-	f->mandelbrot.size = 200;
+	f->mandelbrot.size = 300;
 	while (f->mandelbrot.y_pos <= (WIN_HEIGHT))
 	{
-		f->mandelbrot.cy = 2 - (f->mandelbrot.y_pos / f->mandelbrot.size);
+		f->mandelbrot.cy =  1.2- (f->mandelbrot.y_pos / f->mandelbrot.size); // 1.2 = la position du plan cartesien dans l image
 		f->mandelbrot.x_pos = 0;
 		while (f->mandelbrot.x_pos <=(WIN_WIDTH))
 		{
-			f->mandelbrot.cx = -2 + (f->mandelbrot.x_pos / f->mandelbrot.size);
+			f->mandelbrot.cx = -2.8 + (f->mandelbrot.x_pos / f->mandelbrot.size); // 2.8 = la position du plan cartesien dans l image
 			f->mandelbrot.x_pos++;
 			f->mandelbrot.i = 1;
 			f->mandelbrot.zx = 0;
@@ -32,7 +32,7 @@ void	mandelbrot(t_fractol *f)
 			/*
 			 * Calculus
 			 */
-			while (f->mandelbrot.i <= 50)
+			while (f->mandelbrot.i <= FRACTAL_ITER)
 			{
 				x_tmp = f->mandelbrot.zx;
 				f->mandelbrot.zx = (f->mandelbrot.zx * f->mandelbrot.zx) - (f->mandelbrot.zy * f->mandelbrot.zy) + f->mandelbrot.cx;
@@ -44,7 +44,7 @@ void	mandelbrot(t_fractol *f)
 			/*
 			 * End of calculus
 			 */
-			if (f->mandelbrot.i == 51)
+			if (f->mandelbrot.i == (FRACTAL_ITER + 1))
 			{
 				my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, 0x00550000); //RED
 				// printf("."); // black pixel here !

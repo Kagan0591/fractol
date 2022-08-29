@@ -6,11 +6,11 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:04:05 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/23 14:16:07 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:41:04 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../inc/fractol.h"
 
 static int	close_win(t_fractol *f)
 {
@@ -18,14 +18,14 @@ static int	close_win(t_fractol *f)
 	return (0);
 }
 
-void	window_hooks_manager(t_mlx *mlx)
+void	window_hooks_manager(t_fractol *f)
 {
-	mlx_hook(mlx->win, 17, 0, close_win, &mlx);
+	mlx_hook(f->mlx.win, 17, 0, close_win, &f->mlx);
 }
 
-void	keys_hooks_manager(t_mlx *mlx)
+void	keys_hooks_manager(t_fractol *f)
 {
-	mlx_key_hook(mlx->win, key_binding_mac, &mlx);
+	mlx_key_hook(f->mlx.win, key_binding_mac, &f->mlx);
 }
 
 void	mouse_hooks_manager(t_mlx *mlx)

@@ -6,11 +6,11 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:24:44 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/23 14:53:04 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/29 10:33:55 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../inc/fractol.h"
 
 /*
  * A simple draw of a mandelbrot in terminal to visualize the result.
