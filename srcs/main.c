@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/29 12:23:55 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/30 15:01:46 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,20 @@ int	main(int argc, char **argv, char **envp)
 
 	f = (t_fractol *)malloc(sizeof(t_fractol));
 	agruments_validation(argc, argv, f);
+	if (f->f_opt.type == 1)
+		mandelbrot_init(&f->mandelbrot);
 	// // printf("The set-type number is : %d\n", f->f_opt.type);
-	init_mlx(f);
-	mandelbrot(f);
+	init_mlx(&f->mlx);
+	mandelbrot(&f->mandelbrot, &f->mlx);
 	mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
 	/* TESTING FUNCTION HERE */
 	// write_a_square(&f->mlx, 100, 100, 50, 50);
 	// write_a_square(&f->mlx, 100, 100, 200, 200);
 	// mlx_string_put(f->mlx.mlx, f->mlx.win, 50, 650, 0xFFFFFF, "My Test");
-	// draw_fractal_cli();
 	/* END OF TEST */
+	// draw_fractal_cli();
 	keys_hooks_manager(f);
+	mouse_hooks_manager(f);
 	window_hooks_manager(f);
 	mlx_loop(f->mlx.mlx);
 	return (0);

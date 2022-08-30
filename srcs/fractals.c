@@ -6,55 +6,71 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 08:15:40 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/29 16:03:59 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/30 11:57:49 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	mandelbrot(t_fractol *f)
+void	mandelbrot_init(t_formula_values *data)
+{
+// 	data->x_pos = 0;
+// 	data->y_pos = 0;
+// 	data->i = 1;
+	data->size = 300;
+	data->x_axis_offset = -2;
+	data->y_axis_offset = 1.2;
+}
+void	fractal_updater(t_fractol *f)
+{
+	image_refresh(&f->mlx);
+	mandelbrot(&f->mandelbrot, &f->mlx);
+	mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
+}
+
+void	mandelbrot(t_formula_values *data, t_mlx *mlx_data)
 {
 	long double x_tmp;
 
-	f->mandelbrot.y_pos = 0;
-	f->mandelbrot.size = 300;
-	while (f->mandelbrot.y_pos <= (WIN_HEIGHT))
+	data->y_pos = 0;
+	printf("%Lf | %Lf\n",data->y_axis_offset, data->x_axis_offset);
+	while (data->y_pos <= (WIN_HEIGHT))
 	{
-		f->mandelbrot.cy =  1.2- (f->mandelbrot.y_pos / f->mandelbrot.size); // 1.2 = la position du plan cartesien dans l image
-		f->mandelbrot.x_pos = 0;
-		while (f->mandelbrot.x_pos <=(WIN_WIDTH))
+		data->cy =  data->y_axis_offset - (data->y_pos / data->size);
+		data->x_pos = 0;
+		while (data->x_pos <=(WIN_WIDTH))
 		{
-			f->mandelbrot.cx = -2.8 + (f->mandelbrot.x_pos / f->mandelbrot.size); // 2.8 = la position du plan cartesien dans l image
-			f->mandelbrot.x_pos++;
-			f->mandelbrot.i = 1;
-			f->mandelbrot.zx = 0;
-			f->mandelbrot.zy = 0;
+			data->cx = data->x_axis_offset + (data->x_pos / data->size);
+			data->x_pos++;
+			data->i = 1;
+			data->zx = 0;
+			data->zy = 0;
 			/*
 			 * Calculus
 			 */
-			while (f->mandelbrot.i <= FRACTAL_ITER)
+			while (data->i <= FRACTAL_MAX_ITER)
 			{
-				x_tmp = f->mandelbrot.zx;
-				f->mandelbrot.zx = (f->mandelbrot.zx * f->mandelbrot.zx) - (f->mandelbrot.zy * f->mandelbrot.zy) + f->mandelbrot.cx;
-				f->mandelbrot.zy = (2 * x_tmp *f->mandelbrot.zy) + f->mandelbrot.cy;
-				if ((f->mandelbrot.zx * f->mandelbrot.zx) + (f->mandelbrot.zy * f->mandelbrot.zy) > 4)
+				x_tmp = data->zx;
+				data->zx = (data->zx * data->zx) - (data->zy * data->zy) + data->cx;
+				data->zy = (2 * x_tmp *data->zy) + data->cy;
+				if ((data->zx * data->zx) + (data->zy * data->zy) > 4)
 					break;
-				f->mandelbrot.i++;
+				data->i++;
 			}
 			/*
 			 * End of calculus
 			 */
-			if (f->mandelbrot.i == (FRACTAL_ITER + 1))
+			if (data->i == (FRACTAL_MAX_ITER + 1))
 			{
-				my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, 0x00550000); //RED
+				my_mlx_pixel_put(mlx_data, data->x_pos, data->y_pos, 0x00440000); //Dark RED
 				// printf("."); // black pixel here !
 			}
 			else
 			{
 				// printf(" "); // Edge, so some colors here !
-				my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, 0x00FF0000); //Yellow
+				my_mlx_pixel_put(mlx_data, data->x_pos, data->y_pos, 0x00FFF000); //Yellow
 			}
 		}
-		f->mandelbrot.y_pos++;
+		data->y_pos++;
 	}
 }

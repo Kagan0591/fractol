@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:04:05 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/29 12:41:04 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/08/30 15:02:15 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	keys_hooks_manager(t_fractol *f)
 	mlx_key_hook(f->mlx.win, key_binding_mac, &f->mlx);
 }
 
-void	mouse_hooks_manager(t_mlx *mlx)
+void	mouse_hooks_manager(t_fractol *f)
 {
-	(void) mlx;
+	mlx_mouse_hook(f->mlx.win, mouse_event_mac, f->mlx.mlx);
 }
 
 // void	keys_hooks_manager(t_mlx *mlx, t_data *data, t_params program_params_data)
