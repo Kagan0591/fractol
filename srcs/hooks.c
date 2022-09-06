@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:04:05 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/30 15:02:15 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:02:59 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,12 @@ static int	close_win(t_fractol *f)
 	return (0);
 }
 
-void	window_hooks_manager(t_fractol *f)
+void	hooks_manager(t_fractol *f)
 {
 	mlx_hook(f->mlx.win, 17, 0, close_win, &f->mlx);
-}
-
-void	keys_hooks_manager(t_fractol *f)
-{
-	mlx_key_hook(f->mlx.win, key_binding_mac, &f->mlx);
-}
-
-void	mouse_hooks_manager(t_fractol *f)
-{
-	mlx_mouse_hook(f->mlx.win, mouse_event_mac, f->mlx.mlx);
+	mlx_hook(f->mlx.win, 2, 0, key_binding_mac, &f->mlx);
+	mlx_mouse_hook(f->mlx.win, mouse_binding_mac, &f->mlx);
+	mlx_hook(f->mlx.win, 6, 0, mouse_get_pos_mac, f->mlx.mlx);
 }
 
 // void	keys_hooks_manager(t_mlx *mlx, t_data *data, t_params program_params_data)

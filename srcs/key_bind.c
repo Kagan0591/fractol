@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/30 16:21:57 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/06 09:53:42 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,51 @@ int	key_binding_mac(int key, t_fractol *f)
 		f->mandelbrot.y_axis_offset = 1.2;
 		printf("Key pressed --> %d\n", key);
 	}
+	else if (key == 69)
+	{
+		f->mandelbrot.size += 50;
+		printf("Key pressed --> %d\n", key);
+		printf("Size value = %Lf\n", f->mandelbrot.size);
+	}
+	else if (key == 78)
+	{
+		f->mandelbrot.size -= 50;
+		// f->mandelbrot.x_axis_offset = f->mlx.mouse_pos_x;
+		// f->mandelbrot.y_axis_offset = f->mlx.mouse_pos_y;
+		printf("X offset value = %Lf\n", f->mandelbrot.x_axis_offset);
+		printf("Y offset value = %Lf\n", f->mandelbrot.y_axis_offset);
+		printf("Key pressed --> %d\n", key);
+		printf("Size value = %Lf\n", f->mandelbrot.size);
+	}
+
 	else
 		printf("Others Key pressed --> %d\n", key);
 	fractal_updater(f);
 	return (0);
 }
 
-int	mouse_event_mac(int key, int x, int y, t_fractol *f)
+int mouse_binding_mac(int key, int x, int y, t_fractol *f)
 {
 	(void) x;
 	(void) y;
-	(void) f;
 	if (key == 4)
-		f->mandelbrot.size += 20;
-	if (key == 5)
-		f->mandelbrot.size -= 20;
-
-	// Ici sa seg fault si je decommente Je suis rendu la !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	// fractal_updater(f);
-	// printf("%Lf\n", f->mandelbrot.size);
+		f->mandelbrot.size += 50;
+	else if (key == 5)
+		f->mandelbrot.size -= 50;
+	printf("%Lf\n", f->mandelbrot.size);
 	printf("mouse key --> %d\n", key);
+	fractal_updater(f);
+	return (0);
+}
+
+int	mouse_get_pos_mac(int x, int y, t_fractol *f)
+{
+	if ((x >= 0 && x <= 1280) && (y >= 0 && y <= 720))
+	{
+		f->mlx.mouse_pos_x = x;
+		f->mlx.mouse_pos_y = y;
+		printf("%d, %d\n", f->mlx.mouse_pos_x, f->mlx.mouse_pos_y);
+	}
 	return (0);
 }
 int	key_binding_linux(int key, t_mlx *mlx)
