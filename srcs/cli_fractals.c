@@ -6,15 +6,15 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:24:44 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/08/29 10:33:55 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/19 10:26:09 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
 /*
- * A simple draw of a mandelbrot in terminal to visualize the result.
- * Formula : f{z} = (z * z) + c
+ * A simple draw of a mandelbrot in terminal to visualize the result in one function.
+ * Based on the formula : f{z} = (z * z) + c
  */
 // void	draw_mandelbrot_cli(void)
 // {
@@ -61,6 +61,10 @@
 // 	}
 // }
 
+/*
+ * A simple draw of a mandelbrot in terminal to visualize the result using data struct.
+ * Based on the formula : f{z} = (z * z) + c
+ */
 void	draw_mandelbrot_cli(t_fractol *f)
 {
 	long double x_tmp;
@@ -85,12 +89,10 @@ void	draw_mandelbrot_cli(t_fractol *f)
 				f->mandelbrot.zy = (2 * x_tmp *f->mandelbrot.zy) + f->mandelbrot.cy;
 				if ((f->mandelbrot.zx * f->mandelbrot.zx) + (f->mandelbrot.zy * f->mandelbrot.zy) > 4)
 				{
-					// printf("PASSING HERE\n");
 					break;
 				}
 				f->mandelbrot.i++;
 			}
-			// printf("i Value = %d", f->mandelbrot.i);
 			if (f->mandelbrot.i == 1001)
 				printf(".");
 			else

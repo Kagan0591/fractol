@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:17:40 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/06 09:56:02 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:48:07 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color)
 	char	*dst;
 
 	dst = mlx->pixel_addr + (y * mlx->line_length) + (x * (mlx->bits_per_pixel / 8));
-//	printf("%s:%d\n", __FUNCTION__, __LINE__);
 	*(unsigned int*)dst = color;
-//	printf("%s:%d\n", __FUNCTION__, __LINE__);
 }
 
 void	image_refresh(t_mlx *mlx_data)
