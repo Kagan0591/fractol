@@ -6,14 +6,14 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/06 16:57:40 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:31:36 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
-# define WIN_WIDTH 1280 //X
-# define WIN_HEIGHT 720 //Y
+# define WIN_WIDTH 1280
+# define WIN_HEIGHT 720
 # define FRACTAL_MAX_ITER 50
 # include "libft.h"
 # include <stdio.h>
@@ -21,8 +21,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <errno.h>
-# include <mlx.h>	// Uncomment for Mac
-// #include "mlx.h"	// Uncomment for Linux
+# include <mlx.h>
 
 /*
  * Struct containing all mlx related vars
@@ -45,10 +44,10 @@ typedef struct s_formula_values
 	int			x_pos;
 	int			y_pos;
 	int			i;
-	long double	cx; //c real
-	long double	cy; //c img
-	long double	zx; //z real
-	long double	zy; //z img
+	long double	cx;
+	long double	cy;
+	long double	zx;
+	long double	zy;
 	long double	size;
 	long double	x_axis_offset;
 	long double	y_axis_offset;
@@ -57,7 +56,7 @@ typedef struct s_formula_values
 /*
  * Struct for fractal options
  */
-typedef struct	s_fractal_options
+typedef struct s_fractal_options
 {
 	int	type;
 }	t_fractal_options;
@@ -72,6 +71,7 @@ typedef struct s_fractol
 	t_formula_values	mandelbrot;
 	t_formula_values	julia;
 }	t_fractol;
+
 /*
  * Core functions
  */
@@ -84,19 +84,16 @@ int				key_binding_mac(int key, t_fractol *f);
 int				mouse_binding_mac(int key, int x, int y, t_fractol *f);
 int				mouse_get_pos_mac(int x, int y, t_fractol *f);
 void			mouse_pos_update(t_mlx *mlx_data);
-// int				key_binding_linux(int key, t_mlx *mlx);
-/*
- * Testing functions
- */
-int				write_a_square(t_mlx *mlx, int size_x, int size_y, int init_x_pos, int init_y_pos);
-void			draw_mandelbrot_cli(t_fractol *f);
+
 /*
  * Fractal functions
  */
 void			mandelbrot_init(t_formula_values *data);
 void			mandelbrot(t_formula_values *data, t_mlx *mlx_data);
+void			mandel_calculus(t_formula_values *data);
 void			julia(t_formula_values *data, t_mlx *mlx_data);
-void			fractal_updater(t_fractol *f);
 void			julia_init(t_formula_values *data);
+void			julia_calculus(t_formula_values *data);
+void			fractal_updater(t_fractol *f);
 
 #endif
