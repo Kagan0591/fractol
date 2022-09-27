@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:38:21 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/06/06 10:48:28 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:42:01 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,35 @@ int	get_b(int trgb)
 
 int	create_trgb(int t, int r, int g, int b)
 {
-	printf("t = %d , r = %d, g = %d, b = %d\n", t, r, g, b);
 	return (t << 24 | r << 16 | g << 8 | b);
+}
+
+int	create_rand_rgb(void)
+{
+	char	red;
+	char	green;
+	char	blue;
+	char	transparency;
+
+	transparency = 0;
+	red = char_randomizer();
+	green = char_randomizer();
+	blue = char_randomizer();
+	// int[i] = *(int *)(unsigned char [4]){transparency, blue, green, red};
+	return (*(int *)(unsigned char [4]){transparency, blue, green, red});
+}
+
+int	*create_color_set(int gen_amount)
+{
+	int	*colors;
+	int	i;
+
+	i = 0;
+	colors = malloc(sizeof(int) * gen_amount);
+	while (i < gen_amount)
+	{
+		colors[i] = create_rand_rgb();
+		i++;
+	}
+	return (colors);
 }

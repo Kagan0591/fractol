@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:56:37 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/19 15:11:27 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:28:01 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,54 @@
 
 #include "../inc/fractol.h"
 
-void	mandelbrot(t_formula_values *data, t_mlx *mlx_data)
+// void	mandelbrot(t_formula_values *data, t_mlx *mlx_data)
+void	mandelbrot(t_fractol *f)
 {
-	data->y_pos = 0;
-	while (data->y_pos <= (WIN_HEIGHT))
+	f->mandelbrot.y_pos = 0;
+	while (f->mandelbrot.y_pos <= (WIN_HEIGHT))
 	{
-		data->cy = data->y_axis_offset - (data->y_pos / data->size);
-		data->x_pos = 0;
-		while (data->x_pos <= (WIN_WIDTH))
+		f->mandelbrot.cy = f->mandelbrot.y_axis_offset - (f->mandelbrot.y_pos / f->mandelbrot.size);
+		f->mandelbrot.x_pos = 0;
+		while (f->mandelbrot.x_pos <= (WIN_WIDTH))
 		{
-			data->cx = data->x_axis_offset + (data->x_pos / data->size);
-			data->x_pos++;
-			mandel_calculus(data);
-			if (data->i == (FRACTAL_MAX_ITER + 1))
-				my_mlx_pixel_put(mlx_data, data->x_pos, data->y_pos, 0x440000);
-			else
-				my_mlx_pixel_put(mlx_data, data->x_pos, data->y_pos, 0xFFF000);
+			f->mandelbrot.cx = f->mandelbrot.x_axis_offset + (f->mandelbrot.x_pos / f->mandelbrot.size);
+			f->mandelbrot.x_pos++;
+			mandel_calculus(&f->mandelbrot);
+			mandel_colorisation(f);
 		}
-		data->y_pos++;
+		f->mandelbrot.y_pos++;
 	}
+}
+
+void	mandel_colorisation(t_fractol *f)
+{
+	// if (f->mandelbrot.i == (FRACTAL_MAX_ITER + 1))
+	// 	my_mlx_pixel_put(&f->mlx,f->mandelbrot.x_pos, f->mandelbrot.y_pos, create_rand_rgb());
+	if (f->mandelbrot.i == (FRACTAL_MAX_ITER + 1))
+		my_mlx_pixel_put(&f->mlx,f->mandelbrot.x_pos, f->mandelbrot.y_pos, create_trgb(0, 255, 255, 255));
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 1))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[1]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 2))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[2]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 3))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[3]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 4))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[4]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 5))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[5]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 6))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[6]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 7))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[7]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 8))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[8]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 9))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[9]);
+	else if (f->mandelbrot.i == (FRACTAL_MAX_ITER - 10))
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, f->f_opt.colors[10]);
+	else
+		my_mlx_pixel_put(&f->mlx, f->mandelbrot.x_pos, f->mandelbrot.y_pos, \
+			create_trgb(0, 35, 35, 35));
 }
 
 void	mandel_calculus(t_formula_values *data)

@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/19 14:59:10 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:32:46 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,28 @@
 
 #include "../inc/fractol.h"
 
+
+// AJUSTER POUR JULIA METTRE CONDITION TYPE 1 ou 2
 int	key_binding_mac(int key, t_fractol *f)
 {
 	if (key == 53)
 		fractol_exit(f);
-	else if (key == 123)
+	else if (f->f_opt.type == 1 && key == 123)
 		f->mandelbrot.x_axis_offset += 0.2;
-	else if (key == 124)
+	else if (f->f_opt.type == 2 && key == 123)
+		f->julia.x_axis_offset += 0.2;
+	else if (f->f_opt.type == 1 && key == 124)
 		f->mandelbrot.x_axis_offset -= 0.2;
-	else if (key == 125)
+	else if (f->f_opt.type == 2 && key == 124)
+		f->julia.x_axis_offset -= 0.2;
+	else if (f->f_opt.type == 1 && key == 125)
 		f->mandelbrot.y_axis_offset += 0.2;
-	else if (key == 126)
-		f->mandelbrot.y_axis_offset -= 0.2;
-	else if (key == 49)
-	{
-		f->mandelbrot.x_axis_offset = -2.8;
-		f->mandelbrot.y_axis_offset = 1.2;
-	}
-	else if (key == 69)
-		f->mandelbrot.size += 50;
-	else if (key == 78)
-		f->mandelbrot.size -= 50;
+	else if (f->f_opt.type == 2 && key == 125)
+		f->julia.y_axis_offset += 0.2;
+	else if (f->f_opt.type == 1 && key == 126)
+		f->mandelbrot.y_axis_offset += 0.2;
+	else if (f->f_opt.type == 2 && key == 126)
+		f->julia.y_axis_offset -= 0.2;
 	else
 		printf("Others Key pressed --> %d\n", key);
 	fractal_updater(f);
@@ -48,10 +49,14 @@ int	mouse_binding_mac(int key, int x, int y, t_fractol *f)
 {
 	(void) x;
 	(void) y;
-	if (key == 4)
-		f->mandelbrot.size += 50;
-	else if (key == 5)
-		f->mandelbrot.size -= 50;
+	if (f->f_opt.type == 1 && key == 4)
+		f->mandelbrot.size += 100;
+	if (f->f_opt.type == 2 && key == 4)
+		f->julia.size += 100;
+	else if (f->f_opt.type == 1 && key == 5)
+		f->mandelbrot.size -= 75;
+	else if (f->f_opt.type == 2 && key == 5)
+		f->julia.size -= 75;
 	fractal_updater(f);
 	return (0);
 }

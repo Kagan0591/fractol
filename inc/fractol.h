@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/19 15:31:36 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:36:42 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 # define WIN_WIDTH 1280
 # define WIN_HEIGHT 720
-# define FRACTAL_MAX_ITER 50
+# define FRACTAL_MAX_ITER 4
 # include "libft.h"
 # include <stdio.h>
 # include <unistd.h>
@@ -59,6 +59,7 @@ typedef struct s_formula_values
 typedef struct s_fractal_options
 {
 	int	type;
+	int	*colors;
 }	t_fractal_options;
 
 /*
@@ -77,6 +78,10 @@ typedef struct s_fractol
  */
 void			init_mlx(t_mlx *mlx_data);
 void			my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
+int				create_trgb(int t, int r, int g, int b);
+char			char_randomizer(void);
+int				create_rand_rgb(void);
+int				*create_color_set(int gen_amount);
 void			image_refresh(t_mlx *mlx_data);
 void			fractol_exit(t_fractol *f_struct);
 void			hooks_manager(t_fractol *f);
@@ -85,15 +90,18 @@ int				mouse_binding_mac(int key, int x, int y, t_fractol *f);
 int				mouse_get_pos_mac(int x, int y, t_fractol *f);
 void			mouse_pos_update(t_mlx *mlx_data);
 
+
 /*
  * Fractal functions
  */
 void			mandelbrot_init(t_formula_values *data);
-void			mandelbrot(t_formula_values *data, t_mlx *mlx_data);
+void			mandelbrot(t_fractol *f);
 void			mandel_calculus(t_formula_values *data);
-void			julia(t_formula_values *data, t_mlx *mlx_data);
+void			mandel_colorisation(t_fractol *f);
+void			julia(t_fractol *f);
 void			julia_init(t_formula_values *data);
 void			julia_calculus(t_formula_values *data);
+void			julia_colorisation(t_fractol *f);
 void			fractal_updater(t_fractol *f);
 
 #endif

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsigned_numlen.c                               :+:      :+:    :+:   */
+/*   random.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 11:24:37 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/04/18 11:24:54 by tchalifo         ###   ########.fr       */
+/*   Created: 2022/09/26 12:24:16 by tchalifo          #+#    #+#             */
+/*   Updated: 2022/09/27 11:48:07 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fractol.h"
 
-int	ft_unsigned_numlen(unsigned int n)
+char	char_randomizer(void)
 {
-	int	count;
+	int fd;
+	char	*buffer;
+	int		buffer_int = -1;
 
-	count = 0;
-	while (n > 9)
+	buffer = malloc(sizeof(char *));
+	fd = open ("/dev/urandom", O_RDONLY);
+	while (buffer_int < 0)
 	{
-		n /= 10;
-		count++;
+		read (fd, buffer, 1);
+		buffer_int = buffer[0];
 	}
-	count++;
-	return (count);
+	close (fd);
+	return (buffer[0]);
 }

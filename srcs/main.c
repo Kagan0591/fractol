@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/19 15:11:05 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:34:05 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ int	main(int argc, char **argv)
 	agruments_validation(argc, argv, f);
 	mandelbrot_init(&f->mandelbrot);
 	julia_init(&f->julia);
+	f->f_opt.colors = create_color_set(10);
 	init_mlx(&f->mlx);
 	if (f->f_opt.type == 1)
-		mandelbrot(&f->mandelbrot, &f->mlx);
+		mandelbrot(f);
 	else if (f->f_opt.type == 2)
-		julia(&f->mandelbrot, &f->mlx);
+		julia(f);
 	mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
 	hooks_manager(f);
 	mlx_loop(f->mlx.mlx);

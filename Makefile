@@ -30,6 +30,7 @@ SRCS_FILES		= main.c \
 				  mandelbrot.c \
 				  julia.c \
 				  colors.c \
+				  random.c \
 
 # B_SRCS_FILES	=
 
