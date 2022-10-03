@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/27 15:32:46 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/02 12:32:44 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	key_binding_mac(int key, t_fractol *f)
 	else if (f->f_opt.type == 2 && key == 125)
 		f->julia.y_axis_offset += 0.2;
 	else if (f->f_opt.type == 1 && key == 126)
-		f->mandelbrot.y_axis_offset += 0.2;
+		f->mandelbrot.y_axis_offset -= 0.2;
 	else if (f->f_opt.type == 2 && key == 126)
 		f->julia.y_axis_offset -= 0.2;
 	else

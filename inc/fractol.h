@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/27 15:36:42 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/02 12:18:29 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 # define WIN_WIDTH 1280
 # define WIN_HEIGHT 720
-# define FRACTAL_MAX_ITER 4
+# define FRACTAL_MAX_ITER 30
 # include "libft.h"
 # include <stdio.h>
 # include <unistd.h>

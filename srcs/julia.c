@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:16:53 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/27 13:35:32 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/02 12:20:25 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 #include "../inc/fractol.h"
 
-// void	julia(t_formula_values *data, t_mlx *mlx_data)
 void	julia(t_fractol *f)
 {
 	f->julia.y_pos = 0;
