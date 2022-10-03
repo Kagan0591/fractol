@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 08:15:40 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/09/27 13:34:30 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:29:37 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	mandelbrot_init(t_formula_values *data)
 
 void	julia_init(t_formula_values *data)
 {
-	data->size = 100;
+	data->size = 200;
 	data->x_axis_offset = -2.8;
 	data->y_axis_offset = 1.2;
 }

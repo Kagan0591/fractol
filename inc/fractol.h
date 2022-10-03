@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/02 12:18:29 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:34:04 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 # define WIN_WIDTH 1280
 # define WIN_HEIGHT 720
-# define FRACTAL_MAX_ITER 30
+# define FRACTAL_MAX_ITER 60
 # include "libft.h"
 # include <stdio.h>
 # include <unistd.h>
@@ -39,6 +39,9 @@ typedef struct s_mlx
 	int		mouse_pos_y;
 }	t_mlx;
 
+/*
+ * Struct for fractal related values
+ */
 typedef struct s_formula_values
 {
 	int			x_pos;
@@ -89,7 +92,6 @@ int				key_binding_mac(int key, t_fractol *f);
 int				mouse_binding_mac(int key, int x, int y, t_fractol *f);
 int				mouse_get_pos_mac(int x, int y, t_fractol *f);
 void			mouse_pos_update(t_mlx *mlx_data);
-
 
 /*
  * Fractal functions

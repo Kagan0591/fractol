@@ -6,12 +6,13 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:16:53 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/02 12:20:25 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:52:30 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* cx and cy are static values for the Julia set
  * zx and zy are dynamic values for the Julia set
+ * Where x is reel num and y is imaginary num.
  */
 
 #include "../inc/fractol.h"
@@ -21,11 +22,11 @@ void	julia(t_fractol *f)
 	f->julia.y_pos = 0;
 	while (f->julia.y_pos <= (WIN_HEIGHT))
 	{
-		f->julia.cy = 0.156;
+		f->julia.cy = 0.3842;
 		f->julia.x_pos = 0;
 		while (f->julia.x_pos <= (WIN_WIDTH))
 		{
-			f->julia.cx = -0.8;
+			f->julia.cx = -0.70176;
 			f->julia.x_pos++;
 			julia_calculus(&f->julia);
 			julia_colorisation(f);
@@ -36,30 +37,24 @@ void	julia(t_fractol *f)
 
 void	julia_colorisation(t_fractol *f)
 {
-	// if (f->julia.i == (FRACTAL_MAX_ITER + 1))
-	// 	my_mlx_pixel_put(&f->mlx,f->julia.x_pos, f->julia.y_pos, create_rand_rgb());
 	if (f->julia.i == (FRACTAL_MAX_ITER + 1))
-		my_mlx_pixel_put(&f->mlx,f->julia.x_pos, f->julia.y_pos, create_trgb(0, 255, 255, 255));
+		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, \
+			create_trgb(0, 151, 117, 170));
+	else if (f->julia.i == (FRACTAL_MAX_ITER))
+		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, \
+			f->f_opt.colors[1]);
 	else if (f->julia.i == (FRACTAL_MAX_ITER - 1))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[1]);
+		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, \
+			f->f_opt.colors[2]);
 	else if (f->julia.i == (FRACTAL_MAX_ITER - 2))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[2]);
+		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, \
+			f->f_opt.colors[3]);
 	else if (f->julia.i == (FRACTAL_MAX_ITER - 3))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[3]);
+		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, \
+			f->f_opt.colors[4]);
 	else if (f->julia.i == (FRACTAL_MAX_ITER - 4))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[4]);
-	else if (f->julia.i == (FRACTAL_MAX_ITER - 5))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[5]);
-	else if (f->julia.i == (FRACTAL_MAX_ITER - 6))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[6]);
-	else if (f->julia.i == (FRACTAL_MAX_ITER - 7))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[7]);
-	else if (f->julia.i == (FRACTAL_MAX_ITER - 8))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[8]);
-	else if (f->julia.i == (FRACTAL_MAX_ITER - 9))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[9]);
-	else if (f->julia.i == (FRACTAL_MAX_ITER - 10))
-		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, f->f_opt.colors[10]);
+		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, \
+			f->f_opt.colors[5]);
 	else
 		my_mlx_pixel_put(&f->mlx, f->julia.x_pos, f->julia.y_pos, \
 			create_trgb(0, 35, 35, 35));

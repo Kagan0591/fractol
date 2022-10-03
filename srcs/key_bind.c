@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/02 12:32:44 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:05:18 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 #include "../inc/fractol.h"
 
-
-// AJUSTER POUR JULIA METTRE CONDITION TYPE 1 ou 2
 int	key_binding_mac(int key, t_fractol *f)
 {
 	if (key == 53)
@@ -50,9 +48,9 @@ int	mouse_binding_mac(int key, int x, int y, t_fractol *f)
 	(void) x;
 	(void) y;
 	if (f->f_opt.type == 1 && key == 4)
-		f->mandelbrot.size += 100;
+		f->mandelbrot.size += 75;
 	if (f->f_opt.type == 2 && key == 4)
-		f->julia.size += 100;
+		f->julia.size += 75;
 	else if (f->f_opt.type == 1 && key == 5)
 		f->mandelbrot.size -= 75;
 	else if (f->f_opt.type == 2 && key == 5)

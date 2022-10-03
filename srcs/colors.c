@@ -6,31 +6,11 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:38:21 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/02 13:06:55 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:29:41 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-int	get_t(int trgb)
-{
-	return ((trgb >> 24) & 0xFF);
-}
-
-int	get_r(int trgb)
-{
-	return ((trgb >> 16) & 0xFF);
-}
-
-int	get_g(int trgb)
-{
-	return ((trgb >> 8) & 0xFF);
-}
-
-int	get_b(int trgb)
-{
-	return (trgb & 0xFF);
-}
 
 int	create_trgb(int t, int r, int g, int b)
 {
@@ -48,8 +28,7 @@ int	create_rand_rgb(void)
 	red = char_randomizer();
 	green = char_randomizer();
 	blue = char_randomizer();
-	// int[i] = *(int *)(unsigned char [4]){transparency, blue, green, red};
-	return (*(int *)(unsigned char [4]){transparency, blue, green, red});
+	return (*(int *)(unsigned char [4]){blue, green, red, transparency});
 }
 
 int	*create_color_set(int gen_amount)

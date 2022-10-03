@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/03 14:06:17 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:31:32 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static void	agruments_validation(int argc, char **argv, t_fractol *f)
 	if (argc != 2)
 	{
 		ft_putstr_fd(strerror(22), 2);
-		ft_putstr("You can choose between two different fractals : \
-			\n- Mandelbrot\n- Julia set\n\nAlso, the Julia set can take \
-				a number from 0.1 to 2 to create a different set.");
+		ft_putstr(", You can choose between two different fractals : \
+			\n- Mandelbrot\n- Julia set\n\nAlso, the Julia set can take a \
+			number from 0.1 to 2 to create a different set.");
 		exit(22);
 	}
 	if (ft_strcmp(argv[1], "Mandelbrot") == 0 \
@@ -41,6 +41,7 @@ static void	agruments_validation(int argc, char **argv, t_fractol *f)
 	{
 		ft_printf("Julia set have been choosen\n");
 		f->f_opt.type = 2;
+		if (ft_atoi(argv[2]) // RENDU LA !!! JE DOIT ATOI DES FLOAT POUR VERIFIER SI LE RANGE EST ACCEPTABLE
 	}
 	else
 	{
