@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/03 15:34:04 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:46:09 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,9 @@ typedef struct s_formula_values
  */
 typedef struct s_fractal_options
 {
+	int	max_iter;
 	int	type;
+	int	julia_morph;
 	int	*colors;
 }	t_fractal_options;
 
@@ -98,11 +100,11 @@ void			mouse_pos_update(t_mlx *mlx_data);
  */
 void			mandelbrot_init(t_formula_values *data);
 void			mandelbrot(t_fractol *f);
-void			mandel_calculus(t_formula_values *data);
+void			mandel_calculus(t_fractol *f);
 void			mandel_colorisation(t_fractol *f);
 void			julia(t_fractol *f);
 void			julia_init(t_formula_values *data);
-void			julia_calculus(t_formula_values *data);
+void			julia_calculus(t_fractol *f);
 void			julia_colorisation(t_fractol *f);
 void			fractal_updater(t_fractol *f);
 

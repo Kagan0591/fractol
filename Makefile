@@ -26,6 +26,7 @@ SRCS_FILES		= main.c \
 				  mlx_utils.c \
 				  hooks.c \
 				  key_bind.c \
+				  input_mouse_setup.c \
 				  fractals.c \
 				  mandelbrot.c \
 				  julia.c \

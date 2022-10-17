@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/03 17:31:32 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:38:16 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	fractol_exit(t_fractol *f)
 
 static void	agruments_validation(int argc, char **argv, t_fractol *f)
 {
-	if (argc != 2)
+	if (argc < 2)
 	{
 		ft_putstr_fd(strerror(22), 2);
 		ft_putstr(", You can choose between two different fractals : \
-			\n- Mandelbrot\n- Julia set\n\nAlso, the Julia set can take a \
-			number from 0.1 to 2 to create a different set.");
+			\n- Mandelbrot set\n- Julia set\n\nAlso, the Julia set can take a \
+number from 0.1 to 2 to create a different set.");
 		exit(22);
 	}
 	if (ft_strcmp(argv[1], "Mandelbrot") == 0 \
@@ -40,8 +40,10 @@ static void	agruments_validation(int argc, char **argv, t_fractol *f)
 				|| ft_strcmp(argv[1], "julia") == 0)
 	{
 		ft_printf("Julia set have been choosen\n");
+		if ((argc == 3) && (ft_strcmp(argv[2], "auto") || ft_strcmp(argv[2], "Auto")))
+			f->f_opt.julia_morph = 1;
 		f->f_opt.type = 2;
-		if (ft_atoi(argv[2]) // RENDU LA !!! JE DOIT ATOI DES FLOAT POUR VERIFIER SI LE RANGE EST ACCEPTABLE
+		// if (ft_atoi(argv[2]) // RENDU LA !!! JE DOIT ATOI DES FLOAT POUR VERIFIER SI LE RANGE EST ACCEPTABLE
 	}
 	else
 	{
@@ -56,10 +58,12 @@ int	main(int argc, char **argv)
 {
 	t_fractol	*f;
 
+	printf("%d", argc);
 	f = (t_fractol *)malloc(sizeof(t_fractol));
 	agruments_validation(argc, argv, f);
 	mandelbrot_init(&f->mandelbrot);
 	julia_init(&f->julia);
+	f->f_opt.max_iter = FRACTAL_MAX_ITER;
 	f->f_opt.colors = create_color_set(10);
 	init_mlx(&f->mlx);
 	if (f->f_opt.type == 1)
