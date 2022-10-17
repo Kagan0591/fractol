@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 13:38:16 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:10:26 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,11 @@ number from 0.1 to 2 to create a different set.");
 		ft_printf("Julia set have been choosen\n");
 		if ((argc == 3) && (ft_strcmp(argv[2], "auto") || ft_strcmp(argv[2], "Auto")))
 			f->f_opt.julia_morph = 1;
+		else if (argc == 4)
+			f->f_opt.julia_morph = 2;
+		else
+			ft_putstr_fd("Julia set agruments not valide or inexistant, ignoring others args", 2);
 		f->f_opt.type = 2;
-		// if (ft_atoi(argv[2]) // RENDU LA !!! JE DOIT ATOI DES FLOAT POUR VERIFIER SI LE RANGE EST ACCEPTABLE
 	}
 	else
 	{
@@ -61,15 +64,17 @@ int	main(int argc, char **argv)
 	printf("%d", argc);
 	f = (t_fractol *)malloc(sizeof(t_fractol));
 	agruments_validation(argc, argv, f);
-	mandelbrot_init(&f->mandelbrot);
-	julia_init(&f->julia);
+	if (f->f_opt.type == 1)
+		mandelbrot_init(&f->mandelbrot);
+	else if (f->f_opt.type == 2)
+		julia_init(&f->julia);
 	f->f_opt.max_iter = FRACTAL_MAX_ITER;
 	f->f_opt.colors = create_color_set(10);
 	init_mlx(&f->mlx);
 	if (f->f_opt.type == 1)
 		mandelbrot(f);
 	else if (f->f_opt.type == 2)
-		julia(f);
+		julia(f, argv);
 	mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
 	hooks_manager(f);
 	mlx_loop(f->mlx.mlx);

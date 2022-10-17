@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 13:46:09 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:10:10 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ typedef struct s_fractol
 	t_fractal_options	f_opt;
 	t_formula_values	mandelbrot;
 	t_formula_values	julia;
+	char				*argv_cpy;
 }	t_fractol;
 
 /*
@@ -102,7 +103,7 @@ void			mandelbrot_init(t_formula_values *data);
 void			mandelbrot(t_fractol *f);
 void			mandel_calculus(t_fractol *f);
 void			mandel_colorisation(t_fractol *f);
-void			julia(t_fractol *f);
+void			julia(t_fractol *f, char **argv);
 void			julia_init(t_formula_values *data);
 void			julia_calculus(t_fractol *f);
 void			julia_colorisation(t_fractol *f);
