@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:16:53 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 11:51:35 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:56:39 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ void	julia(t_fractol *f)
 			f->julia.cy = 0.3842;//(f->julia.cy + f->mlx.mouse_pos_y) / 10000;
 		else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
 		{
-			f->julia.cy = ft_atold(f->argv_cpy[4]);
+			f->julia.cy = ft_atold(f->argv_cpy[3]);
+			// printf("(%Lf) \n", f->julia.cy);
+			// printf("(%s) \n", f->argv_cpy[3]);
 			// NEED TO ADD THE ARGV[4]
 		}
 		f->julia.x_pos = 0;
@@ -36,7 +38,8 @@ void	julia(t_fractol *f)
 				f->julia.cx = -0.7017;//(f->julia.cx + f->mlx.mouse_pos_x) / 10000;
 			else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
 			{
-				f->julia.cx = ft_atold(f->argv_cpy[3]);
+				f->julia.cx = ft_atold(f->argv_cpy[2]); ???????????????????? ATOLD MARCHE PAS AVEC NEGATIF
+				printf("(%Lf) \n", f->julia.cx);
 				// NEED TO ADD THE ARGV[3]
 			}
 			f->julia.x_pos++;

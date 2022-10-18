@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 11:36:48 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:38:48 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ static void	args_validation(int argc, char **argv, t_fractol *f)
 		free(f);
 		bad_arguments(22);
 	}
+
 	if (ft_strcmp(argv[1], "Mandelbrot") == 0 \
 		|| ft_strcmp(argv[1], "mandelbrot") == 0)
 		f->f_opt.type = 1;
+
 	else if (ft_strcmp(argv[1], "Julia") == 0 \
 		|| ft_strcmp(argv[1], "julia") == 0)
 	{
@@ -38,8 +40,7 @@ static void	args_validation(int argc, char **argv, t_fractol *f)
 		else if (argc == 4 && (ft_strisdecimal(argv[2]) == 0 && ft_strisdecimal(argv[3]) == 0))
 			f->f_opt.julia_morph = 2;
 		else
-			ft_putstr_fd("The additional arguments concerning Julia are not \
-			valid. Args are going to be ignore.", 2);
+			julia_bad_arguments();
 		f->f_opt.type = 2;
 	}
 	else
@@ -47,6 +48,7 @@ static void	args_validation(int argc, char **argv, t_fractol *f)
 		free(f);
 		bad_arguments(22);
 	}
+	printf("%d\n", f->f_opt.julia_morph);
 }
 
 static void	set_initial_vars(t_fractol *f, int argc, char **argv)
@@ -58,7 +60,6 @@ static void	set_initial_vars(t_fractol *f, int argc, char **argv)
 	f->f_opt.max_iter = FRACTAL_MAX_ITER;
 	f->f_opt.colors = create_color_set(10);
 	f->argv_cpy = ft_argvcpy(argc, argv);
-	printf ("%s\n", f->argv_cpy[1]);
 }
 
 int	main(int argc, char **argv)
@@ -70,13 +71,13 @@ int	main(int argc, char **argv)
 		return (1);
 	args_validation(argc, argv, f);
 	set_initial_vars(f, argc, argv);
-	// init_mlx(&f->mlx);
-	// if (f->f_opt.type == 1)
-	// 	mandelbrot(f);
-	// else if (f->f_opt.type == 2)
-	// 	julia(f);
-	// mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
-	// hooks_manager(f);
-	// mlx_loop(f->mlx.mlx);
+	init_mlx(&f->mlx);
+	if (f->f_opt.type == 1)
+		mandelbrot(f);
+	else if (f->f_opt.type == 2)
+		julia(f);
+	mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
+	hooks_manager(f);
+	mlx_loop(f->mlx.mlx);
 	return (0);
 }
