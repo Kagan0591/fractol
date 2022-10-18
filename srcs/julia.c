@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:16:53 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 17:12:48 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 08:47:52 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	julia(t_fractol *f, char **argv)
 			f->julia.cy = 0.3842;//(f->julia.cy + f->mlx.mouse_pos_y) / 10000;
 		else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
 		{
-			// NEED TO ADD THE ARGV[3]
+			f->julia.cy = argv[4]
+			// NEED TO ADD THE ARGV[4]
 		}
 		f->julia.x_pos = 0;
 		while (f->julia.x_pos <= (WIN_WIDTH))
@@ -35,6 +36,7 @@ void	julia(t_fractol *f, char **argv)
 				f->julia.cx = -0.7017;//(f->julia.cx + f->mlx.mouse_pos_x) / 10000;
 			else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
 			{
+				f->julia.cx = argv[3]
 				// NEED TO ADD THE ARGV[3]
 			}
 			f->julia.x_pos++;

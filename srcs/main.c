@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 17:10:26 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 08:45:24 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	agruments_validation(int argc, char **argv, t_fractol *f)
 		ft_putstr_fd(strerror(22), 2);
 		ft_putstr(", You can choose between two different fractals : \
 			\n- Mandelbrot set\n- Julia set\n\nAlso, the Julia set can take a \
-number from 0.1 to 2 to create a different set.");
+number from -2 to 2 to create a different set.");
 		exit(22);
 	}
 	if (ft_strcmp(argv[1], "Mandelbrot") == 0 \

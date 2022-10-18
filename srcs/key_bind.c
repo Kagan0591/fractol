@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 13:41:42 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 08:45:11 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,9 @@ static void	list_of_keys()
 static void	option_keys(int key, t_fractol *f)
 {
 	if (key == 24)
-	{
 		f->f_opt.max_iter += 1;
-		write(1, "P", 1);
-	}
 	else if (key == 27)
-	{
-		write (1, "M", 1);
 		f->f_opt.max_iter -= 1;
-	}
 }
 
 static void	move_keys(int key, t_fractol *f)
