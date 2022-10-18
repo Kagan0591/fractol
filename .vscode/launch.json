@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug",
 			"program": "${workspaceFolder}/fractol",
-			"args": ["julia", "-0.835", "-0.2321"],
+			"args": ["julia"],
 			"cwd": "${workspaceFolder}"
 		}
 	]

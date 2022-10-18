@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 08:45:11 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:31:15 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 
 #include "../inc/fractol.h"
 
-static void	list_of_keys()
+static void	list_of_keys(void)
 {
 	ft_putstr("You have used a not set key. Try these :\n");
-	ft_putstr("Displacement :\ntop arrow, bottom arrow, left arrow, right arrow\n");
+	ft_putstr("displacement : \
+		top arrow, bottom arrow, left arrow, right arrow\n");
 }
 
 static void	option_keys(int key, t_fractol *f)
@@ -33,19 +34,19 @@ static void	option_keys(int key, t_fractol *f)
 
 static void	move_keys(int key, t_fractol *f)
 {
-	if (f->f_opt.type == 1 && key == 123) //gauche
+	if (f->f_opt.type == 1 && key == 123)
 		f->mandelbrot.x_axis_offset += 0.2;
 	else if (f->f_opt.type == 2 && key == 123)
 		f->julia.x_axis_offset += 0.2;
-	else if (f->f_opt.type == 1 && key == 124) // droite
+	else if (f->f_opt.type == 1 && key == 124)
 		f->mandelbrot.x_axis_offset -= 0.2;
 	else if (f->f_opt.type == 2 && key == 124)
 		f->julia.x_axis_offset -= 0.2;
-	else if (f->f_opt.type == 1 && key == 125) // buttom
+	else if (f->f_opt.type == 1 && key == 125)
 		f->mandelbrot.y_axis_offset += 0.2;
 	else if (f->f_opt.type == 2 && key == 125)
 		f->julia.y_axis_offset += 0.2;
-	else if (f->f_opt.type == 1 && key == 126) //top
+	else if (f->f_opt.type == 1 && key == 126)
 		f->mandelbrot.y_axis_offset -= 0.2;
 	else if (f->f_opt.type == 2 && key == 126)
 		f->julia.y_axis_offset -= 0.2;
@@ -54,7 +55,7 @@ static void	move_keys(int key, t_fractol *f)
 int	key_binding_mac(int key, t_fractol *f)
 {
 	if (key == 53)
-		fractol_exit(f);
+		fractol_exit(0, f);
 	else if (key == 123 || key == 124 || key == 125 || key == 126)
 		move_keys(key, f);
 	else if (key == 24 || key == 27)
@@ -68,3 +69,9 @@ int	key_binding_mac(int key, t_fractol *f)
 	fractal_updater(f);
 	return (0);
 }
+
+/* Manque a ajouter l affichage de chaine de char graphiquement
+ * -Iteration max level
+ * -Zoom level
+ * -Nom du fractal affiche
+ * */

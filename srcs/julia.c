@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:16:53 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 14:22:32 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:23:39 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,19 @@ void	julia(t_fractol *f)
 	while (f->julia.y_pos <= (WIN_HEIGHT))
 	{
 		if (f->f_opt.julia_morph == 1) // IF AUTO
-			f->julia.cy = 0.3842;//(f->julia.cy + f->mlx.mouse_pos_y) / 10000;
-		else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
 		{
-			f->julia.cy = ft_atold(f->argv_cpy[3]);
-			// printf("(%Lf) \n", f->julia.cy);
-			// printf("(%s) \n", f->argv_cpy[3]);
-			// NEED TO ADD THE ARGV[4]
+			f->julia.cy = f->mlx.mouse_pos_y / 2500;
+			printf("%d - ", f->mlx.mouse_pos_y);
 		}
+		else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
+			f->julia.cy = ft_atold(f->argv_cpy[3]);
 		f->julia.x_pos = 0;
 		while (f->julia.x_pos <= (WIN_WIDTH))
 		{
 			if (f->f_opt.julia_morph == 1) // IF AUTO
-				f->julia.cx = -0.7017;//(f->julia.cx + f->mlx.mouse_pos_x) / 10000;
+				f->julia.cx = f->mlx.mouse_pos_x / 1400;
 			else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
-			{
 				f->julia.cx = ft_atold(f->argv_cpy[2]);
-				printf("(%Lf) \n", f->julia.cx);
-				// NEED TO ADD THE ARGV[3]
-			}
 			f->julia.x_pos++;
 			julia_calculus(f);
 			julia_colorisation(f);
@@ -85,7 +79,8 @@ void	julia_calculus(t_fractol *f)
 	while (f->julia.i <= f->f_opt.max_iter)
 	{
 		x_tmp = f->julia.zx;
-		f->julia.zx = (f->julia.zx * f->julia.zx) - (f->julia.zy * f->julia.zy) + f->julia.cx;
+		f->julia.zx = (f->julia.zx * f->julia.zx) - (f->julia.zy * f->julia.zy) \
+			+ f->julia.cx;
 		f->julia.zy = (2 * x_tmp * f->julia.zy) + f->julia.cy;
 		if ((f->julia.zx * f->julia.zx) + (f->julia.zy * f->julia.zy) > 4)
 			break ;

@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:56:37 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 13:45:55 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:26:26 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,11 @@ void	mandel_calculus(t_fractol *f)
 	while (f->mandelbrot.i <= f->f_opt.max_iter)
 	{
 		x_tmp = f->mandelbrot.zx;
-		f->mandelbrot.zx = (f->mandelbrot.zx * f->mandelbrot.zx) - (f->mandelbrot.zy * f->mandelbrot.zy) + f->mandelbrot.cx;
+		f->mandelbrot.zx = (f->mandelbrot.zx * f->mandelbrot.zx) - \
+			(f->mandelbrot.zy * f->mandelbrot.zy) + f->mandelbrot.cx;
 		f->mandelbrot.zy = (2 * x_tmp * f->mandelbrot.zy) + f->mandelbrot.cy;
-		if ((f->mandelbrot.zx * f->mandelbrot.zx) + (f->mandelbrot.zy * f->mandelbrot.zy) > 4)
+		if ((f->mandelbrot.zx * f->mandelbrot.zx) + (f->mandelbrot.zy * \
+			f->mandelbrot.zy) > 4)
 			break ;
 		f->mandelbrot.i++;
 	}

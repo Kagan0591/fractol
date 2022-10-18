@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 12:49:12 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:10:01 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ char			char_randomizer(void);
 int				create_rand_rgb(void);
 int				*create_color_set(int gen_amount);
 void			image_refresh(t_mlx *mlx_data);
-void			fractol_exit(t_fractol *f_struct);
 void			hooks_manager(t_fractol *f);
 int				key_binding_mac(int key, t_fractol *f);
 int				mouse_binding_mac(int key, int x, int y, t_fractol *f);
@@ -97,6 +96,7 @@ int				mouse_get_pos_mac(int x, int y, t_fractol *f);
 void			mouse_pos_update(t_mlx *mlx_data);
 void			bad_arguments(int error_code);
 void			julia_bad_arguments(void);
+void			fractol_exit(int error_code, t_fractol *f);
 
 /*
  * Fractal functions

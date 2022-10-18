@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 08:15:40 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 17:09:00 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:22:56 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ void	julia_init(t_formula_values *data)
 	data->size = 200;
 	data->x_axis_offset = -2.8;
 	data->y_axis_offset = 1.2;
-	// data->cy = 0.3842;
-	// data->cx = -0.7017;
-	// data->cy = 0.1889;
-	// data->cx = -0.7269;
-	// data->cy = 0.2000;
-	// data->cx = -0.8500;
 	data->cy = 0;
 	data->cx = -1;
 }
