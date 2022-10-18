@@ -6,9 +6,13 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 11:05:22 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:36:08 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
+// void	print_menu(void)
+// {
+
+// }

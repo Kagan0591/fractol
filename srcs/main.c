@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 11:13:40 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:36:48 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,32 +29,27 @@ static void	args_validation(int argc, char **argv, t_fractol *f)
 	}
 	if (ft_strcmp(argv[1], "Mandelbrot") == 0 \
 		|| ft_strcmp(argv[1], "mandelbrot") == 0)
-	{
-		ft_printf("Mandelbrot set have been choosen\n");
 		f->f_opt.type = 1;
-	}
 	else if (ft_strcmp(argv[1], "Julia") == 0 \
-				|| ft_strcmp(argv[1], "julia") == 0)
+		|| ft_strcmp(argv[1], "julia") == 0)
 	{
-		ft_printf("Julia set have been choosen\n");
 		if ((argc == 3) && (ft_strcmp(argv[2], "auto") || ft_strcmp(argv[2], "Auto")))
 			f->f_opt.julia_morph = 1;
 		else if (argc == 4 && (ft_strisdecimal(argv[2]) == 0 && ft_strisdecimal(argv[3]) == 0))
 			f->f_opt.julia_morph = 2;
 		else
-			ft_putstr_fd("The additional arguments concerning Julia are not valid. Args are going to be ignore.", 2);
+			ft_putstr_fd("The additional arguments concerning Julia are not \
+			valid. Args are going to be ignore.", 2);
 		f->f_opt.type = 2;
 	}
 	else
 	{
-		ft_putstr_fd(strerror(22), 2);
-		ft_putstr_fd(" --> Try Mandelbrot or Julia as an argument\n", 2);
 		free(f);
-		exit(22);
+		bad_arguments(22);
 	}
 }
 
-static void	set_initial_vars(t_fractol *f)
+static void	set_initial_vars(t_fractol *f, int argc, char **argv)
 {
 	if (f->f_opt.type == 1)
 		mandelbrot_init(&f->mandelbrot);
@@ -62,6 +57,8 @@ static void	set_initial_vars(t_fractol *f)
 		julia_init(&f->julia);
 	f->f_opt.max_iter = FRACTAL_MAX_ITER;
 	f->f_opt.colors = create_color_set(10);
+	f->argv_cpy = ft_argvcpy(argc, argv);
+	printf ("%s\n", f->argv_cpy[1]);
 }
 
 int	main(int argc, char **argv)
@@ -72,14 +69,14 @@ int	main(int argc, char **argv)
 	if (!f)
 		return (1);
 	args_validation(argc, argv, f);
-	set_initial_vars(f);
-	init_mlx(&f->mlx);
-	if (f->f_opt.type == 1)
-		mandelbrot(f);
-	else if (f->f_opt.type == 2)
-		julia(f);
-	mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
-	hooks_manager(f);
-	mlx_loop(f->mlx.mlx);
+	set_initial_vars(f, argc, argv);
+	// init_mlx(&f->mlx);
+	// if (f->f_opt.type == 1)
+	// 	mandelbrot(f);
+	// else if (f->f_opt.type == 2)
+	// 	julia(f);
+	// mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
+	// hooks_manager(f);
+	// mlx_loop(f->mlx.mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 09:35:10 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:51:36 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ typedef struct s_fractol
 	t_fractal_options	f_opt;
 	t_formula_values	mandelbrot;
 	t_formula_values	julia;
-	char				*argv_cpy;
+	char				**argv_cpy;
 }	t_fractol;
 
 /*
@@ -95,6 +95,7 @@ int				key_binding_mac(int key, t_fractol *f);
 int				mouse_binding_mac(int key, int x, int y, t_fractol *f);
 int				mouse_get_pos_mac(int x, int y, t_fractol *f);
 void			mouse_pos_update(t_mlx *mlx_data);
+void			bad_arguments(int error_code);
 
 /*
  * Fractal functions
