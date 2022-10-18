@@ -32,6 +32,8 @@ SRCS_FILES		= main.c \
 				  julia.c \
 				  colors.c \
 				  random.c \
+				  error.c \
+				  menu.c \
 
 # B_SRCS_FILES	=
 

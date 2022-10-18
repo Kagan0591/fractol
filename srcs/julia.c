@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:16:53 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 08:47:52 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 09:35:01 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "../inc/fractol.h"
 
-void	julia(t_fractol *f, char **argv)
+void	julia(t_fractol *f)
 {
 	f->julia.y_pos = 0;
 	while (f->julia.y_pos <= (WIN_HEIGHT))
