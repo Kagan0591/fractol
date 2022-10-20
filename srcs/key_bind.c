@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:08:59 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 15:31:15 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/19 09:38:55 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,3 @@ int	key_binding_mac(int key, t_fractol *f)
 	fractal_updater(f);
 	return (0);
 }
-
-/* Manque a ajouter l affichage de chaine de char graphiquement
- * -Iteration max level
- * -Zoom level
- * -Nom du fractal affiche
- * */

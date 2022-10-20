@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 08:15:40 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 15:22:56 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:39:34 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	mandelbrot_init(t_formula_values *data)
 {
-	data->size = 200;
-	data->x_axis_offset = -2.8;
+	data->size = 300;
+	data->x_axis_offset = -2.7;
 	data->y_axis_offset = 1.2;
 }
 
 void	julia_init(t_formula_values *data)
 {
-	data->size = 200;
-	data->x_axis_offset = -2.8;
+	data->size = 300;
+	data->x_axis_offset = -2.1;
 	data->y_axis_offset = 1.2;
-	data->cy = 0;
-	data->cx = -1;
+	data->cy = 0.823;
+	data->cx = -0.2;
 }
 
 void	fractal_updater(t_fractol *f)

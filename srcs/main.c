@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:20 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 15:18:50 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:43:22 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,18 @@ int	main(int argc, char **argv)
 	set_initial_vars(argc, argv, f);
 	init_mlx(&f->mlx);
 	if (f->f_opt.type == 1)
+	{
+		ft_putstr("\nThis is Mandelbrot !!\n\n");
 		mandelbrot(f);
+	}
 	else if (f->f_opt.type == 2)
+	{
+		ft_putstr("\nThis is Julia !!\n\n");
 		julia(f);
+	}
 	mlx_put_image_to_window(f->mlx.mlx, f->mlx.win, f->mlx.img_addr, 0, 0);
 	hooks_manager(f);
 	mlx_loop(f->mlx.mlx);
 	fractol_exit(0, f);
 	return (0);
 }
-
-//5120 x 2880

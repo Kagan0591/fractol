@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:24:52 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 15:10:01 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:13:40 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void			init_mlx(t_mlx *mlx_data);
 void			my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 int				create_trgb(int t, int r, int g, int b);
 char			char_randomizer(void);
-int				create_rand_rgb(void);
 int				*create_color_set(int gen_amount);
 void			image_refresh(t_mlx *mlx_data);
 void			hooks_manager(t_fractol *f);
@@ -97,6 +96,8 @@ void			mouse_pos_update(t_mlx *mlx_data);
 void			bad_arguments(int error_code);
 void			julia_bad_arguments(void);
 void			fractol_exit(int error_code, t_fractol *f);
+void			str_toscreen(t_fractol *f, int x, int y, char *string);
+void			num_toscreen(t_fractol *f, int x, int y, int values);
 
 /*
  * Fractal functions

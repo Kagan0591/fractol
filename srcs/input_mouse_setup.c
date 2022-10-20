@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 09:35:18 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 15:08:27 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:12:03 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,9 @@ int	mouse_binding_mac(int key, int x, int y, t_fractol *f)
 
 int	mouse_get_pos_mac(int x, int y, t_fractol *f)
 {
-	// if ((x >= 0 && x <= 1280) && (y >= 0 && y <= 720))
-	// {
 	f->mlx.mouse_pos_x = x;
 	f->mlx.mouse_pos_y = y;
-	printf("%d, %d\n", f->mlx.mouse_pos_x, f->mlx.mouse_pos_y);
 	if (f->f_opt.julia_morph == 1)
 		fractal_updater(f);
-	// }
 	return (0);
 }

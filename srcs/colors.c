@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:38:21 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/03 15:29:41 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:02:09 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	create_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
-int	create_rand_rgb(void)
+static int	create_rand_rgb(void)
 {
 	char	red;
 	char	green;

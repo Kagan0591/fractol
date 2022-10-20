@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:16:53 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 15:23:39 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:35:58 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ void	julia(t_fractol *f)
 	f->julia.y_pos = 0;
 	while (f->julia.y_pos <= (WIN_HEIGHT))
 	{
-		if (f->f_opt.julia_morph == 1) // IF AUTO
+		if (f->f_opt.julia_morph == 1)
 		{
 			f->julia.cy = f->mlx.mouse_pos_y / 2500;
 			printf("%d - ", f->mlx.mouse_pos_y);
 		}
-		else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
+		else if (f->f_opt.julia_morph == 2)
 			f->julia.cy = ft_atold(f->argv_cpy[3]);
 		f->julia.x_pos = 0;
 		while (f->julia.x_pos <= (WIN_WIDTH))
 		{
-			if (f->f_opt.julia_morph == 1) // IF AUTO
+			if (f->f_opt.julia_morph == 1)
 				f->julia.cx = f->mlx.mouse_pos_x / 1400;
-			else if (f->f_opt.julia_morph == 2) // IF ARGV WITH VALUE
+			else if (f->f_opt.julia_morph == 2)
 				f->julia.cx = ft_atold(f->argv_cpy[2]);
 			f->julia.x_pos++;
 			julia_calculus(f);
